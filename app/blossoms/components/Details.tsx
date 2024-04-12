@@ -5,7 +5,7 @@ import { useAppTheme } from "@/app/components/theme/AppTheme";
 import { photographyModel } from "@/app/utils/models";
 import { motion } from "framer-motion"
 import Link from "next/link";
-import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -16,10 +16,10 @@ const outerVariants = {
 };
 
 const innerVariants = {
-    open: { x: 0, y:0, opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 150 } },
-    closed: { x: 50, y:100, opacity: 0, scale: 1.1 }
-  };
-  
+    open: { x: 0, y: 0, opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 150 } },
+    closed: { x: 50, y: 100, opacity: 0, scale: 1.1 }
+};
+
 
 const Details = ({ photo }: { photo: photographyModel[] }) => {
 
@@ -27,7 +27,7 @@ const Details = ({ photo }: { photo: photographyModel[] }) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-      }, []); 
+    }, []);
 
     return (
         <div className="flex flex-col justify-start">
@@ -42,20 +42,18 @@ const Details = ({ photo }: { photo: photographyModel[] }) => {
                 </p>
             </div>
             <motion.div variants={outerVariants} viewport={{ once: true }} initial='closed' whileInView='open'>
-                {photo && <ResponsiveMasonry columnsCountBreakPoints={{640: 1, 768: 2, 1080: 3, 1280: 4, 1536: 4}} className="mx-auto mt-2">
-                        <Masonry gutter="1rem">
-                            {photo.map((curr, i) => {
-                                return (
-                                    <motion.div variants={innerVariants} className="group border border-white dark:border-slate-800 p-1 rounded-sm dark:bg-gray-200 bg-gray-800 w-fit mx-auto" key={curr._id}>
-                                        <Image  src={curr.url} alt={curr.name} width={280} height={380}
-                                         className='rounded-sm lg:group-hover:opacity-85 duration-300'
-                                         placeholder='blur' blurDataURL='/assets/image/imgPlaceholder.jpg'
-                                        />
-                                    </motion.div>
-                                )
-                            })}
-                        </Masonry>
-                    </ResponsiveMasonry>}
+                {photo && <div className="mx-auto mt-2 columns-1 md:columns-2 lg:columns-3 xl:columns-4 w-fit">
+                    {photo.map((curr, i) => {
+                        return (
+                            <motion.div variants={innerVariants} className="group border border-white dark:border-slate-800 p-1 rounded-sm dark:bg-gray-200 bg-gray-800 w-fit mb-4" key={curr._id}>
+                                <Image src={curr.url} alt={curr.name} width={280} height={380}
+                                    className='rounded-sm lg:group-hover:opacity-85 duration-300'
+                                    placeholder='blur' blurDataURL='/assets/image/imgPlaceholder.jpg'
+                                />
+                            </motion.div>
+                        )
+                    })}
+                </div>}
             </motion.div>
         </div>
     )

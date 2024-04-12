@@ -10,6 +10,9 @@ import { webProjectModel } from "@/app/utils/models";
 const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 async function fetchDetails(slug: string) {
+    
+    if(slug.includes('object') || slug.includes("Object")) return;
+    
     const data = new ServerData({ path: 'getWeb' });
 
     const res = await data.get({ body: { slug } });

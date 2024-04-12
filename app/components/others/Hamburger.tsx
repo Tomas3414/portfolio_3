@@ -13,45 +13,7 @@ import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { ModeSwitch2 } from './ModeSwitch'
 
-const divVariants = {
-    open: { width: '300px', height: '100vh', x: '0px' },
-    closed: { width: '300px', height: '100vh', x: '500px', transition: { delay: .8 } }
-}
-const ulVariants = {
-    open: { transition: { staggerChildren: 0.07, delayChildren: 0.5 } },
-    closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
-};
-const liVariants = {
-    open: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 160 } },
-    closed: { y: -40, opacity: 0 }
-};
-
 interface I_links { name: string, link: string, icon: ReactNode }
-const navLinkHome: I_links[] = [
-    { name: 'Intro', link: '#Intro', icon: <FaRegHandPeace /> },
-    { name: 'About Me', link: '#AboutMe', icon: <BiMessageDetail /> },
-    { name: 'Tools & Tech', link: '#Tech', icon: <BsGearFill /> },
-    { name: 'Web Projects', link: '#WebProjects', icon: <BsCodeSlash /> },
-    { name: 'Flutter Projects', link: '#FlutterProjects', icon: <SiFlutter /> },
-    { name: 'My Hobby', link: '#MyHobby', icon: <BsCameraFill /> },
-    { name: 'Hire Me', link: '#HireMe', icon: <FaFileSignature /> },
-]
-const navLinkProjects: I_links[] = [
-    { name: 'Home', link: '/', icon: <FaHome /> },
-    { name: 'Web Projects', link: '#WebProjects', icon: <BsCodeSlash /> },
-    { name: 'Flutter Projects', link: '#FlutterProjects', icon: <SiFlutter /> },
-    { name: 'My Hobby', link: '/blossoms', icon: <BsCameraFill /> },
-]
-const navLinkBlossoms: I_links[] = [
-    { name: 'Home', link: '/', icon: <FaHome /> },
-    { name: 'Projects', link: '/projects', icon: <FaUserCheck /> },
-]
-const navLinkOthers: I_links[] = [
-    { name: 'Home', link: '/', icon: <FaHome /> },
-    { name: 'Projects', link: '/projects', icon: <FaUserCheck /> },
-    { name: 'Blossoms', link: '/blossoms', icon: <BsCameraFill /> },
-]
-
 
 
 export default function HamBurger() {
@@ -66,9 +28,9 @@ export default function HamBurger() {
     useEffect(() => {
         if (pathName === '/') {
             setNavLink(navLinkHome)
-        } else if (pathName.includes('blossoms')) {
+        } else if (pathName.includes('blossoms') || pathName.includes('Blossoms')) {
             setNavLink(navLinkBlossoms)
-        } else if (pathName.includes('projects')) {
+        } else if (pathName.includes('projects') || pathName.includes('Projects')) {
             setNavLink(navLinkProjects)
         } else {
             setNavLink(navLinkOthers)
@@ -79,8 +41,8 @@ export default function HamBurger() {
     if (isClient) {
         return (
             <>
-                <button onClick={() => setIsOpen(!isOpen)} className="fixed top-0 right-4 w-fit mt-2 z-50 rounded-full cursor-pointer text-2xl p-[9px] dark:bg-blue-300 bg-pink-300" area-label='sideNavBar' title='sideNavbar'>
-                    <CgMenuRight className="dark:text-black text-pink-800" />
+                <button onClick={() => setIsOpen(!isOpen)} className="fixed top-0 right-4 w-fit mt-2 z-50 rounded-full cursor-pointer text-2xl p-[9px] dark:bg-blue-300 bg-slate-300" area-label='sideNavBar' title='sideNavbar'>
+                    <CgMenuRight className="dark:text-black text-slate-800" />
                 </button>
                 {/* hl3 side navbar */}
                 <motion.div
@@ -125,10 +87,48 @@ export default function HamBurger() {
             </>
         );
     } else {
-        return <button className="fixed top-0 right-4 w-fit mt-2 z-50 rounded-full cursor-pointer text-2xl p-[9px] dark:bg-blue-300 bg-pink-300" area-label='sideNavBar' title='sideNavbar'>
-            <CgMenuRight className="dark:text-black text-pink-800" />
+        return <button className="fixed top-0 right-4 w-fit mt-2 z-50 rounded-full cursor-pointer text-2xl p-[9px] dark:bg-blue-300 bg-slate-300" area-label='sideNavBar' title='sideNavbar'>
+            <CgMenuRight className="dark:text-black text-slate-800" />
         </button>
     }
 
 }
+
+const divVariants = {
+    open: { width: '300px', height: '100vh', x: '0px' },
+    closed: { width: '300px', height: '100vh', x: '500px', transition: { delay: .8 } }
+}
+const ulVariants = {
+    open: { transition: { staggerChildren: 0.07, delayChildren: 0.5 } },
+    closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
+};
+const liVariants = {
+    open: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 160 } },
+    closed: { y: -40, opacity: 0 }
+};
+
+const navLinkHome: I_links[] = [
+    { name: 'Intro', link: '#Intro', icon: <FaRegHandPeace /> },
+    { name: 'About Me', link: '#AboutMe', icon: <BiMessageDetail /> },
+    { name: 'Tools & Tech', link: '#Tech', icon: <BsGearFill /> },
+    { name: 'Web Projects', link: '#WebProjects', icon: <BsCodeSlash /> },
+    { name: 'Flutter Projects', link: '#FlutterProjects', icon: <SiFlutter /> },
+    { name: 'My Hobby', link: '#MyHobby', icon: <BsCameraFill /> },
+    { name: 'Hire Me', link: '#HireMe', icon: <FaFileSignature /> },
+]
+const navLinkProjects: I_links[] = [
+    { name: 'Home', link: '/', icon: <FaHome /> },
+    { name: 'Web Projects', link: '#WebProjects', icon: <BsCodeSlash /> },
+    { name: 'Flutter Projects', link: '#FlutterProjects', icon: <SiFlutter /> },
+    { name: 'My Hobby', link: '/blossoms', icon: <BsCameraFill /> },
+]
+const navLinkBlossoms: I_links[] = [
+    { name: 'Home', link: '/', icon: <FaHome /> },
+    { name: 'Projects', link: '/projects', icon: <FaUserCheck /> },
+]
+const navLinkOthers: I_links[] = [
+    { name: 'Home', link: '/', icon: <FaHome /> },
+    { name: 'Projects', link: '/projects', icon: <FaUserCheck /> },
+    { name: 'Blossoms', link: '/blossoms', icon: <BsCameraFill /> },
+]
 
