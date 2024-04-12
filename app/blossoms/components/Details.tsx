@@ -5,7 +5,6 @@ import { useAppTheme } from "@/app/components/theme/AppTheme";
 import { photographyModel } from "@/app/utils/models";
 import { motion } from "framer-motion"
 import Link from "next/link";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import Image from "next/image";
 import { useEffect } from "react";
 
