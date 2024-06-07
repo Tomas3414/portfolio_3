@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion'
 import AnimatedHeading from '@/app/components/others/AnimatedHeading'
-import { useAppTheme } from '@/app/components/theme/AppTheme';
 import FlutterCard from '@/app/components/others/FlutterCard';
 import { flutterProjectModel } from '@/app/utils/models';
+import { ubuntu } from '@/app/utils/Fonts';
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.5, delayChildren: 0.3 }},
@@ -16,8 +16,6 @@ const Heading = {
 }
 
 const Flutter = ({flutter}: {flutter: flutterProjectModel[]}) => {
-
-    const {ubuntu} = useAppTheme()
 
     return (
         <div id="FlutterProjects" className='relative overflow-hidden myContainer py-[5rem]'>

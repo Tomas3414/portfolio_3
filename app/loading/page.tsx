@@ -3,15 +3,15 @@
 import Image from 'next/image'
 import { useEffect } from 'react'
 import loadingImg from '@/public/assets/image/loading.gif'
-import { useAppTheme } from '@/app/components/theme/AppTheme'
 import { Background, BackgroundOption } from '@/app/components/others/Background'
 import AnimatedHeading from '@/app/components/others/AnimatedHeading'
+import { poppins } from "@/app/utils/Fonts";
 
 
 
 export default function Loading() {
 
-    const { poppins } = useAppTheme();
+    
 
     useEffect(() => {
         window.scrollTo(0, 0);

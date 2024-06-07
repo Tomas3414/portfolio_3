@@ -1,14 +1,11 @@
 import { motion } from 'framer-motion'
 import AnimatedHeading from '../others/AnimatedHeading'
 import { Background, BackgroundOption } from '../others/Background'
-import { Poppins, Roboto, Ubuntu } from 'next/font/google';
-
-const roboto = Roboto({ display: 'swap', weight: ['400', '500', '700'], subsets: ['latin'] });
-const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
-const poppins = Poppins({ display: 'swap', weight: ['400', '500', '600', '700'], subsets: ['latin'] })
+import {roboto, ubuntu, monsterRat, robotoMono, comicNeue} from '@/app/utils/Fonts';
 
 interface props { themeColor: string }
 const AboutMe = ({ themeColor }: props) => {
+
 
   return (
     <>
@@ -18,28 +15,27 @@ const AboutMe = ({ themeColor }: props) => {
           <h1 className="text-4xl lg:text-5xl mb-4" style={ubuntu.style}>
             A small<span className="font-bold ml-2">Introduction</span>
           </h1>
-          <article style={poppins.style}>
-            <p className="dark:text-gray-400 text-gray-700">
-              Hey, this is <span style={{ color: themeColor }}> Moinak Majumdar</span>, a self taught developer. Currently pursuing Masters in Computer Application [MCA] from <span style={{ color: themeColor }}>Maulana Abul Kalam Azad University of Technology</span>, West Bengal, India.
-              <br /><span className="mt-2">I am highly motivated about learning multiple programming languages and framework. I have been passionate about UI/UX design and fullstack development since my early college days. But I am Still learning lot of things in design and development.</span>
+          <article style={monsterRat.style}>
+            <p className="dark:text-gray-300 text-gray-700">
+            Passionate self-taught developer with a lifelong love for coding. Skilled in full-stack development, mobile app creation, and UX design. Eager to turn innovative ideas into reality.
             </p>
           </article>
           <h2 className="mt-4 text-2xl font-bold" style={ubuntu.style}>Timeline</h2>
-          <motion.ul initial='closed' whileInView='open' viewport={{ once: true, amount: 0.3 }} variants={leftOuterVariants} className="dark:text-gray-400 text-gray-700">
+          <motion.ul initial='closed' whileInView='open' viewport={{ once: true, amount: 0.3 }} variants={leftOuterVariants} className="dark:text-slate-400 text-slate-700">
             {timeline.map((curr, index) => {
               return (
                 <motion.li variants={leftInnerVariants} key={index} className='mt-4  flex flex-col pl-5 border-l-2 dark:border-slate-600 border-slate-700'>
-                  <h1 className={`${poppins.className} text-sm`} style={{ color: themeColor }}>{curr.date}</h1>
-                  <h2 className='text-xl lg:text-2xl font-bold dark:text-gray-300 text-gray-700' style={ubuntu.style}>{curr.name}</h2>
-                  <p className="mt-2" style={roboto.style}>{curr.from}</p>
-                  <ul className="list-disc list-inside mt-2">
+                  <h1 className='text-lg lg:text-xl font-semibold dark:text-gray-300 text-gray-700' style={ubuntu.style}>{curr.name}</h1>
+                  <h4 className={`${roboto.className} font-bold text-xs uppercase`} style={{ color: themeColor }}>{curr.date}</h4>
+                  <p className="mt-2 dark:text-gray-400 text-gray-800" style={comicNeue.style}>{curr.from}</p>
+                  <ul className="list-disc list-inside mt-2 text-sm">
                     {curr.sub && <li>
-                      <span style={ubuntu.style} className="font-bold mr-1">Course :</span>
-                      <span style={roboto.style}>{curr.sub}</span>
+                      <span style={robotoMono.style} className="font-semibold mr-1 mb-1 text-slate-800 dark:text-slate-200">Course:</span>
+                      <span style={robotoMono.style}>{curr.sub}</span>
                     </li>}
-                    <li style={ubuntu.style}>
-                      <span className="font-bold mr-1">Grade :</span>
-                      <span className='font-bold'>{curr.grade}</span>
+                    <li style={robotoMono.style} className='text-sm'>
+                      <span className="font-semibold mr-1 dark:text-slate-200 text-slate-800">Grade :</span>
+                      <span className='font-semibold'>{curr.grade}</span>
                     </li>
                   </ul>
                 </motion.li>
@@ -85,6 +81,13 @@ const leftInnerVariants = {
 }
 
 const timeline = [
+  {
+    name: "Post Graduation",
+    sub: "Machine Learning, Database Management system, Data Structures and Algorithms, Computer Networks, Software Engineering, Operating System",
+    date: 'oct 2022 - ',
+    from: "Currently pursuing Masters In Computer Application (MCA) from Maulana Abul Kalam Azad University of Technology, West Bengal, India",
+    grade: "8.87 (CGPA)"
+  },
   {
     name: "Graduation",
     sub: 'OOP, computer system architecture, operating system, data structure and algorithm, database management systems, computer networks, fundamentals of artificial intelligence, digital image processing and computer graphics.',

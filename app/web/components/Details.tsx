@@ -3,6 +3,7 @@
 import Button from "@/app/components/others/Button";
 import ImgSlider2 from "@/app/components/others/ImgSlider2";
 import { useAppTheme } from "@/app/components/theme/AppTheme";
+import { poppins, ubuntu } from "@/app/utils/Fonts";
 import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +21,7 @@ type T_Web = { _id: string, name: string, type: string, role: string, intro: str
 
 const Details = ({ Data }: { Data: T_Web }) => {
 
-    const { poppins, ubuntu, themeColor } = useAppTheme();
+    const { themeColor } = useAppTheme();
     const router = useRouter();
     const links = [{ url: Data.liveUrl, icon: <FaLink />, text: 'Live Url' }, { url: Data.gitRepo, icon: <FaGithub />, text: 'Git Repositories' }]
 

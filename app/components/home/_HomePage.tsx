@@ -28,7 +28,7 @@ const _HomePage = (props: props) => {
   const {themeColor} = useAppTheme();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, []); 
 
   return (
@@ -47,7 +47,7 @@ const _HomePage = (props: props) => {
         <FlutterProjects data={props.flutterProjects} />
       </motion.section>
       <motion.section id='MyHobby' initial='closed' whileInView='open' viewport={viewport} transition={transition} className=' relative overflow-hidden'>
-        <Hobby data={props.photography}/>
+        <Hobby data={props.photography} themeColor={themeColor}/>
       </motion.section>
       <motion.section id='HireMe' initial='closed' whileInView='open' viewport={viewport} transition={transition} className=' relative overflow-hidden myContainer py-[8rem]'>
         <HireMe />

@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
 import AnimatedHeading from '../others/AnimatedHeading'
-import { Ubuntu } from 'next/font/google';
 import WebProjectCard from '../others/WebProjectCard';
 import { webProjectModel } from '@/app/utils/models';
+import { ubuntu } from '@/app/utils/Fonts';
 
-const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.3, delayChildren: 0.3 } },
@@ -27,11 +26,11 @@ export default function WebProjects({data}: {data: webProjectModel[]}) {
                         Learning<span className="font-bold ml-2">By Building</span>
                     </h1>
                 </motion.div>
-                <div className='mt-4 p-4 md:p-8 xl:p-16 rounded-lg dark:text-gray-300 text-gray-800 dark:bg-slate-800/40 bg-slate-50'>
+                <div className='mt-4 p-4 md:p-8 xl:p-16 rounded-lg dark:bg-slate-900 bg-gray-100'>
                     {data && <div className="mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-16 relative">
                         {data.map((curr, index) => {
                             return (
-                                <WebProjectCard key={index} data={curr} />
+                                <WebProjectCard key={`webProject_${index}`} data={curr} />
                             )
                         })}
                     </div>}

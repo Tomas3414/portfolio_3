@@ -1,10 +1,9 @@
 import { Variants, motion } from "framer-motion";
 import AnimatedHeading from "../others/AnimatedHeading";
-import { Ubuntu } from 'next/font/google';
 import FlutterCard from "../others/FlutterCard";
 import { flutterProjectModel } from "@/app/utils/models";
+import { ubuntu } from "@/app/utils/Fonts";
 
-const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.3, delayChildren: 0.3 } },

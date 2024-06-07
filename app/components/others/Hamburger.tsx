@@ -12,6 +12,7 @@ import { useAppTheme } from '../theme/AppTheme'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { ModeSwitch2 } from './ModeSwitch'
+import { poppins, roboto, robotoMono, ubuntu } from '@/app/utils/Fonts'
 
 interface I_links { name: string, link: string, icon: ReactNode }
 
@@ -22,15 +23,15 @@ export default function HamBurger() {
     const [activeLink, setActiveLink] = useState<string>()
     const [navLink, setNavLink] = useState<I_links[]>()
 
-    const { ubuntu, roboto, themeColor, isClient } = useAppTheme();
+    const { themeColor, isClient } = useAppTheme();
     const { resolvedTheme } = useTheme();
 
     useEffect(() => {
         if (pathName === '/') {
             setNavLink(navLinkHome)
-        } else if (pathName.includes('blossoms') || pathName.includes('Blossoms')) {
+        } else if (pathName.toLowerCase().includes('blossoms')) {
             setNavLink(navLinkBlossoms)
-        } else if (pathName.includes('projects') || pathName.includes('Projects')) {
+        } else if (pathName.toLowerCase().includes('projects')) {
             setNavLink(navLinkProjects)
         } else {
             setNavLink(navLinkOthers)
@@ -58,9 +59,11 @@ export default function HamBurger() {
                     >
                         {navLink && <section className='w-full min-h-full px-4 flex items-center'>
                             <motion.div variants={ulVariants} animate={isOpen ? 'open' : 'closed'} className='min-w-full flex flex-col h-fit'>
-                                <motion.h1 variants={liVariants} className='text-3xl lg:text-4xl mt-4 mb-4 lg:mb-12  ml-4 '>
-                                    <span className={ubuntu.className}>useful</span>
-                                    <span className={`${ubuntu.className} font-bold ml-2`} style={{ color: themeColor }}>Links</span>
+                                <motion.h1 style={poppins.style} variants={liVariants} className='text-2xl lg:text-3xl mt-4 mb-4 lg:mb-12'>
+                                    {pathName === '/' ? <span className="font-bold ml-2" style={{ color: themeColor }}>Chapters</span> : <>
+                                        <span>Navigation</span>
+                                        <span className="font-bold ml-2" style={{ color: themeColor }}>Routes</span>
+                                    </>}
                                 </motion.h1>
                                 {navLink.map((curr, index) => {
                                     return (

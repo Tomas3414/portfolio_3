@@ -8,11 +8,12 @@ import { useRouter } from "next/navigation";
 import Button from "@/app/components/others/Button";
 import { BsArrowBarRight } from "react-icons/bs";
 import { Background, BackgroundOption } from "@/app/components/others/Background";
+import { poppins, roboto } from "@/app/utils/Fonts";
 
 
 export default function Doc({ params }: { params: { slug: string } }) {
 
-    const { roboto, poppins, themeColor } = useAppTheme();
+    const { themeColor } = useAppTheme();
     const router = useRouter();
     const origin = typeof window != 'undefined' ? window.location.origin : '';
     const devFlag: boolean = process.env.NEXT_PUBLIC_DEV_FLAG == 'yes' ? true : false;

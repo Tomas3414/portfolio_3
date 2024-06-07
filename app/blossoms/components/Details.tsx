@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
+import { roboto, ubuntu } from "@/app/utils/Fonts";
 
 
 const outerVariants = {
@@ -22,7 +23,7 @@ const innerVariants = {
 
 const Details = ({ photo }: { photo: photographyModel[] }) => {
 
-    const { ubuntu, roboto, themeColor } = useAppTheme();
+    const { themeColor } = useAppTheme();
 
     useEffect(() => {
         window.scrollTo(0, 0);

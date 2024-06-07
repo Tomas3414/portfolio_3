@@ -5,11 +5,7 @@ import { AiFillApi, AiFillSetting, AiOutlineMobile } from 'react-icons/ai'
 import { FiPackage } from 'react-icons/fi'
 import AnimatedHeading from '../others/AnimatedHeading'
 import { Background, BackgroundOption } from '../others/Background'
-import { Poppins, Roboto, Ubuntu } from 'next/font/google';
-
-const roboto = Roboto({ display: 'swap', weight: ['400', '500', '700'], subsets: ['latin'] });
-const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
-const poppins = Poppins({ display: 'swap', weight: ['400', '500', '600', '700'], subsets: ['latin'] })
+import { poppins, roboto, ubuntu } from '@/app/utils/Fonts'
 
 
 interface props {themeColor: string }

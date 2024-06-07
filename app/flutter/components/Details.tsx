@@ -10,6 +10,7 @@ import { AiOutlineRollback } from 'react-icons/ai';
 import Button from '@/app/components/others/Button';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { poppins, roboto, ubuntu } from '@/app/utils/Fonts';
 
 
 const outerVariants = { open: { transition: { staggerChildren: 0.2, delayChildren: 0.5 } }, closed: { transition: { staggerChildren: 0.7, staggerDirection: -1 } } };
@@ -22,7 +23,7 @@ type T_Flutter = { _id: string, __v: number, name: string, intro: string, gitRep
 
 const Details = ({ Data }: { Data: T_Flutter }) => {
 
-    const { poppins, ubuntu, roboto, themeColor } = useAppTheme();
+    const { themeColor } = useAppTheme();
     const links = [{ url: Data.release, icon: <BsAndroid2 />, text: 'Release' }, { url: Data.gitRepo, icon: <FaGithub />, text: 'Git Repositories' }];
     const router = useRouter();
 

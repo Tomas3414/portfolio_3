@@ -2,10 +2,11 @@
 
 import { Variants, motion } from "framer-motion"
 import { MdOutlineHighlightOff, MdOutlineWarning } from "react-icons/md"
-import { useAppTheme } from "./components/theme/AppTheme"
 import SocialMedia from "./components/others/SocialMedia"
 import { Background, BackgroundOption } from "./components/others/Background"
+import { FaTerminal } from "react-icons/fa";
 import Ring from "./components/others/Ring"
+import { comicNeue, lato, poppins, robotoMono } from "./utils/Fonts"
 
 const outerVariants: Variants = {
     closed: { transition: { staggerChildren: 0.3, staggerDirection: -1 } },
@@ -23,17 +24,32 @@ const innerVariants: Variants = {
 interface props { error: Error, reset: () => void }
 export default function ErrorBoundary({ error, reset }: props) {
 
-    const { comicNeue, lato } = useAppTheme();
     return (
         <main className="relative text-gray-800 dark:text-gray-300">
             <div className='flex min-w-full min-h-screen justify-center items-center px-4'>
-                <motion.div initial='closed' animate='open' variants={inner1} className='relative p-8 rounded-3xl w-fit sm:w-35r flex flex-col overflow-hidden bg-transparent backdrop-blur-sm shadow-2xl dark:shadow-slate-900 shadow-slate-300'>
+                <motion.div initial='closed' animate='open' variants={inner1} className='relative p-8 rounded-3xl w-fit sm:w-35r flex flex-col overflow-hidden bg-transparent backdrop-blur-sm shadow-2xl bg-slate-200 dark:bg-slate-800 dark:shadow-slate-900 shadow-slate-300'>
                     <motion.div variants={outerVariants} initial='closed' animate='open'>
                         <motion.div variants={innerVariants} className='w-full'>
-                            <MdOutlineWarning className='text-4xl md:text-6xl mx-auto' />
+                            <MdOutlineWarning className='text-4xl md:text-6xl mx-auto text-red-500' />
                         </motion.div>
-                        <motion.h1 variants={innerVariants} className='mt-8 font-comicNeue text-xl md:text-2xl font-normal' style={comicNeue.style}>{error.message}</motion.h1>
-                        <motion.h2 variants={innerVariants} className='mt-6 font-ubuntu text-xl text-center' style={lato.style}>Wait sometime or report to the developer.</motion.h2>
+                        <motion.div variants={innerVariants} className="mt-8 bg-slate-200 dark:bg-slate-900 rounded-md overflow-hidden" style={robotoMono.style}>
+                            <div className="w-full px-2 py-1 bg-slate-700/20 flex items-center gap-2">
+                                <FaTerminal className="text-red-200" />
+                                <span className="text-red-500">ERROR</span>
+                            </div>
+                            <div className="p-2 text-sm flex flex-col">
+                                <p>
+                                    &gt;
+                                    <span className="font-semibold"> {error.name}</span>
+                                    <span>: </span>
+                                    <span style={lato.style} className="">{error.message}</span>
+                                </p>
+                                <p className="mt-2">&gt; Unexpected error occurred. Wait sometime or report to the developer.</p>
+                            </div>
+                        </motion.div>
+                        <motion.p variants={innerVariants} className='mt-6 text-sm' style={poppins.style}>
+
+                        </motion.p>
                         <motion.div variants={innerVariants} className='mt-6'>
                             <SocialMedia classList='flex justify-center gap-4 text-white' />
                         </motion.div>

@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation'
 import AnimatedHeading from "./AnimatedHeading";
 import { ModeSwitch1 } from "./ModeSwitch";
-import { useAppTheme } from "../theme/AppTheme";
 import HamBurger from "./Hamburger";
+import { pacifico, roboto, ubuntu } from "@/app/utils/Fonts";
 
 const link = [
   { name: 'Home', url: '/' },
@@ -16,7 +16,6 @@ const link = [
 export default function Navbar() {
 
   const pathName = usePathname();
-  const { ubuntu, roboto, pacifico } = useAppTheme();
 
   return (
     <>

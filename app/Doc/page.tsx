@@ -5,11 +5,12 @@ import DevFlag from "@/app/components/others/DevFlag";
 import Ring from "@/app/components/others/Ring";
 import { useAppTheme } from "@/app/components/theme/AppTheme";
 import { Background, BackgroundOption } from "@/app/components/others/Background";
+import { poppins, roboto } from "../utils/Fonts";
 
 
 export default function Doc() {
 
-    const { roboto, poppins, themeColor } = useAppTheme();
+    const { themeColor } = useAppTheme();
     const origin = typeof window != 'undefined' ? window.location.origin : '';
 
 

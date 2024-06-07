@@ -9,6 +9,7 @@ import { CSSProperties, useState, useEffect } from "react";
 import { useAppTheme } from "../theme/AppTheme";
 import { useTheme } from "next-themes";
 import { webProjectModel } from "@/app/utils/models";
+import { monsterRat, poppins, robotoMono, ubuntu } from "@/app/utils/Fonts";
 
 const outerVariants: Variants = {
     open: { transition: { staggerChildren: 0.1, delayChildren: 0.2, delay: .4 } },
@@ -21,14 +22,14 @@ const innerVariants: Variants = {
 
 
 const WebProjectCard = ({ data }: { data: webProjectModel }) => {
-    const { poppins, ubuntu, themeColor } = useAppTheme();
+    const { themeColor } = useAppTheme();
     const [webCardCss, setWebCardCss] = useState<string>();
     const [shadow, setShadow] = useState<string>();
     const { resolvedTheme } = useTheme();
 
     useEffect(() => {
         resolvedTheme === 'dark' ? setWebCardCss(cardStyle.darkWebCard2) : setWebCardCss(cardStyle.lightWebCard2);
-        resolvedTheme === 'dark' ? setShadow("-10px -10px 10px 1px #1e293b50, 10px 10px 10px 2px #03071280") : setShadow("-10px -10px 10px 1px #ffffff80, 10px 10px 10px 2px #1e293b20");
+        resolvedTheme === 'dark' ? setShadow("10px 10px 5px #060911, -10px -10px 5px #1e293b80") : setShadow("10px 10px 10px #dddee0, -12px -12px 10px #ffffff");
     }, [resolvedTheme])
 
     return (
@@ -48,13 +49,13 @@ const WebProjectCard = ({ data }: { data: webProjectModel }) => {
                         </p>
                         <motion.div initial='closed' whileInView='open' viewport={{ once: false, amount: 0.3 }} variants={outerVariants} className="px-4 pb-4" style={poppins.style}>
                             <motion.div variants={innerVariants} className="" >
-                                <p className={`-translate-y-4 xl:translate-y-0 mb-0 xl:mb-2 px-2 md:px-4 py-1 rounded-xl text-xs text-center text-white w-fit ${data.status == 'completed' ? 'bg-green-500' : 'bg-red-500'}`}>
+                                <p style={robotoMono.style} className={`-translate-y-4 xl:translate-y-0 mb-0 xl:mb-2 px-2 py-1 rounded-full text-xs font-semibold text-center text-white w-fit ${data.status == 'completed' ? 'bg-green-500' : 'bg-red-500'}`}>
                                     {data.status}
                                 </p>
                                 <AnimatedHeading title={data.name} classList="text-xl xl:text-2xl capitalize"  />
                             </motion.div>
-                            <motion.p variants={innerVariants} className='mt-2'>{data.intro}</motion.p>
-                            <motion.p variants={innerVariants} className='mt-4 text-sm group-hover:text-blue-500 px-4 py-2 rounded-lg w-fit dark:bg-slate-700  dark:text-white bg-gray-200 text-black'>Read More</motion.p>
+                            <motion.p variants={innerVariants} className='mt-2 text-sm text-slate-700 dark:text-slate-300'>{data.intro}</motion.p>
+                            <motion.p variants={innerVariants} style={monsterRat.style} className='mt-4 font-semibold text-sm group-hover:text-blue-500 px-4 py-2 rounded-lg w-fit dark:bg-slate-700  dark:text-slate-300 bg-gray-200 text-slate-600'>Read More</motion.p>
                         </motion.div>
                     </div>
                 </div>

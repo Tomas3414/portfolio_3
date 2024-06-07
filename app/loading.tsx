@@ -2,12 +2,11 @@
 
 import loadingImg from '@/public/assets/image/loading.gif'
 import Image from 'next/image'
-import { Poppins } from 'next/font/google'
 import { useEffect } from 'react'
 import AnimatedHeading from './components/others/AnimatedHeading'
 import { Background, BackgroundOption } from './components/others/Background'
+import { poppins } from './utils/Fonts'
 
-const poppins = Poppins({ display: 'swap', weight: ['400', '500', '600', '700'], subsets: ['latin'] })
 
 export default function Loading() {
 

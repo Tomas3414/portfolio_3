@@ -2,12 +2,11 @@
 
 import { useRef } from 'react';
 import { MdError } from 'react-icons/md'
-import { useAppTheme } from '../theme/AppTheme';
+import { comicNeue, lato } from '@/app/utils/Fonts';
 
 const DevFlag = () => {
     const modalRef = useRef<HTMLDialogElement>(null);
 
-    const { lato, comicNeue } = useAppTheme();
     const text = ['R', 'E', 'A', 'D', 'M', 'E'];
     const devFlag: boolean = process.env.NEXT_PUBLIC_DEV_FLAG == 'yes' ? true : false;
 

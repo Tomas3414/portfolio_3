@@ -1,13 +1,12 @@
 import { Variants, motion } from "framer-motion";
 import Image from "next/legacy/image";
-import { Roboto, Ubuntu } from "next/font/google";
 import AnimatedHeading from "../others/AnimatedHeading";
 import { Background, BackgroundOption } from "../others/Background";
 import Link from "next/link";
 import { photographyModel } from "@/app/utils/models";
-
-const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
-const roboto = Roboto({ display: 'swap', weight: ['400', '500', '700'], subsets: ['latin'] });
+import { lato, monsterRat, roboto, robotoMono, ubuntu } from "@/app/utils/Fonts";
+import { FaMobileAlt } from "react-icons/fa";
+import { IoFlowerSharp } from "react-icons/io5";
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } },
@@ -22,11 +21,11 @@ const Heading = {
     open: { opacity: 1, transition: { delay: 0.2, } }
 }
 
-export default function Hobby({data}: {data: photographyModel[]}) {
+export default function Hobby({ data, themeColor }: { data: photographyModel[], themeColor: string }) {
 
     return (
         <>
-            <div className='myContainer py-[5rem] dark:text-gray-300 text-gray-800' style={ubuntu.style}>
+            <div className='myContainer py-[5rem] dark:text-gray-300 text-gray-700' style={ubuntu.style}>
                 <motion.div initial='closed' whileInView='open' viewport={{ once: true, amount: 0.3 }} variants={outerVariants} className="flex flex-col justify-start">
                     <motion.div variants={Heading}>
                         <AnimatedHeading classList="tracking-wide text-lg uppercase" font={ubuntu} title='Blossoms' />
@@ -34,12 +33,18 @@ export default function Hobby({data}: {data: photographyModel[]}) {
                             <span className="font-bold mr-2">Fragrance of</span>
                             my rooftop
                         </h1>
-                        <p style={roboto.style} className='text-lg mt-4 max-w-[35rem]'>Being a versatile person, I have a pretty large list of my pastimes. One of the ones I enjoy doing is gardening and clicking on good photos of those with my cell phone. <br />
-                            My device - <a style={roboto.style} className='font-bold' href='https://www.motorola.in/smartphones-motorola-one-macro/p' target='_blank'>Motorola One Macro</a>
+                        <p style={monsterRat.style} className='text-lg mt-4 max-w-[35rem]'>Being a versatile person, I have a pretty large list of my pastimes. One of the ones I enjoy doing is gardening and clicking on good photos of those with my cell phone.
                         </p>
-                        <div className='mt-2'>
-                            <Link href='/blossoms' className={`${roboto.className} text-xl font-semibold cursor-pointer`} scroll={false}>
-                                View all blossoms
+                        <div className="flex flex-col justify-center gap-4 mt-2">
+                            <Link className='font-semibold flex gap-2 items-center' href='https://www.motorola.in/smartphones-motorola-one-macro/p' target='_blank'>
+                                <span style={roboto.style}>My device</span>
+                                <FaMobileAlt />
+                                <span>-</span>
+                                <span className="font-bold" style={robotoMono.style}>Motorola One Macro</span>
+                            </Link>
+                            <Link href='/blossoms' style={lato.style} className='text-lg font-semibold cursor-pointer px-4 py-2 bg-slate-600/10 dark:bg-white/20 rounded-md flex justify-center w-fit items-center gap-2' scroll={false}>
+                                <IoFlowerSharp style={{color: themeColor}}/>
+                                <span>View all blossoms</span>
                             </Link>
                         </div>
                     </motion.div>

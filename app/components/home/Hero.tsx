@@ -6,6 +6,7 @@ import { TbArrowsDownUp } from 'react-icons/tb'
 import { useRef } from 'react'
 import { useAppTheme } from '../theme/AppTheme';
 import { HeroBg } from './HeroBg';
+import { poppins, roboto, robotoMono, ubuntu } from '@/app/utils/Fonts';
 
 const viewport = {
     once: false,
@@ -32,12 +33,12 @@ const Bottom: Variants = {
 
 export default function Hero() {
 
-    const { poppins, ubuntu, roboto, themeColor } = useAppTheme();
+    const { themeColor } = useAppTheme();
     const mainRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ target: mainRef, offset: ["start start", "end start"] });
     const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '-0%']);
     const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
-   
+
     return (
         <section id='Intro' ref={mainRef} className='relative min-h-screen overflow-hidden'>
             <motion.div className='min-h-screen flex overflow-hidden z-10' initial='closed' whileInView='open' viewport={viewport} transition={transition} style={{ y: contentY }}>
@@ -57,7 +58,7 @@ export default function Hero() {
                                         <h2>
                                             {text.split('').map((curr, i) => {
                                                 return (
-                                                    <span key={i} className="text-xl md:text-2xl dark:text-gray-200 text-gray-900" style={poppins.style}>{curr}</span>
+                                                    <span key={`greet_${i}`} className="text-xl md:text-2xl dark:text-gray-200 text-gray-900" style={poppins.style}>{curr}</span>
                                                 )
                                             })}
                                         </h2>
@@ -66,18 +67,21 @@ export default function Hero() {
                             />
                             <h2 className='text-xl md:text-2xl font-ubuntu ml-1' style={{ color: themeColor }}>/&gt;</h2>
                         </div>
-                        <h1 className="noSelection xl:text-6xl lg:text-5xl text-4xl bg-gradient-to-b bg-clip-text text-transparent dark:from-[#ffffff] dark:to-[#38495a] from-slate-500 to-gray-700" style={ubuntu.style}>
+                        <h1 className="noSelection xl:text-6xl lg:text-5xl text-4xl bg-gradient-to-b bg-clip-text text-transparent dark:from-white dark:to-[#38495a] from-slate-400 to-slate-800" style={ubuntu.style}>
                             <span>I&apos;m Moinak,</span>
                             <br className='visible sm:hidden' />
-                            <span className='font-bold ml-0 sm:ml-4'>Dart/Flutter</span>
+                            <span className='font-extrabold ml-0 sm:ml-4'>Dart/Flutter</span>
 
                             <span className='ml-4'>and</span>
                         </h1>
-                        <h1 className="noSelection font-bold mt-2 xl:text-6xl lg:text-5xl text-4xl bg-gradient-to-b bg-clip-text text-transparent dark:from-[#ffffff] dark:to-[#38495a] from-slate-500 to-gray-700" style={ubuntu.style}>Full Stack Web Developer.</h1>
+                        <h1 className="noSelection font-extrabold mt-2 xl:text-6xl lg:text-5xl text-4xl bg-gradient-to-b bg-clip-text text-transparent dark:from-white dark:to-[#38495a] from-slate-400 to-slate-800" style={ubuntu.style}>Full Stack Web Developer.</h1>
                     </motion.div>
-                    <motion.article variants={Bottom} className="mt-4 text-base lg:text-lg dark:text-gray-400 text-gray-800">
-                        <p style={roboto.style}>
-                            <b className='animate-pulse'>Welcome to my portfolio!</b> I&apos;m a passionate full-stack web developer with a focus on Dart/Flutter development. I specialize in crafting dynamic and responsive web and mobile applications that deliver exceptional user experiences. Through this platform, I invite you to explore a collection of my projects, each demonstrating my dedication to innovation and creativity in the world of web and mobile development. Take a journey through my portfolio and discover the exciting possibilities that these technologies can bring to your digital projects.
+                    <motion.article variants={Bottom} className="mt-4 text-base lg:text-lg dark:text-gray-400 text-slate-700">
+                        <p>
+                            <span className='font-bold mr-1' style={robotoMono.style}>Welcome to my portfolio!</span>
+                            <span style={roboto.style}>
+                                I&apos;m a passionate full-stack web developer with a focus on Dart/Flutter development. I specialize in crafting dynamic and responsive web and mobile applications that deliver exceptional user experiences. Through this platform, I invite you to explore a collection of my projects, each demonstrating my dedication to innovation and creativity in the world of web and mobile development. Take a journey through my portfolio and discover the exciting possibilities that these technologies can bring to your digital projects.
+                            </span>
                         </p>
                     </motion.article>
                 </div>

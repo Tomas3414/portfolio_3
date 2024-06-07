@@ -3,6 +3,7 @@
 import { Variants, motion } from "framer-motion"
 import { NextFont } from "next/dist/compiled/@next/font"
 import { useAppTheme } from "../theme/AppTheme";
+import { comicNeue } from "@/app/utils/Fonts";
 
 
 const outerVariants: Variants = {
@@ -21,7 +22,7 @@ interface props {
 const AnimatedHeading = ({ title, classList, font, color }: props) => {
 
     const words = title.split("");
-    const { themeColor, comicNeue, isClient } = useAppTheme();
+    const { themeColor, isClient } = useAppTheme();
 
     if (isClient) {
         if (font === undefined) {

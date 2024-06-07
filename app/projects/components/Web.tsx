@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion'
 import AnimatedHeading from '@/app/components/others/AnimatedHeading'
-import { useAppTheme } from '@/app/components/theme/AppTheme';
 import WebProjectCard from '@/app/components/others/WebProjectCard';
 import { webProjectModel } from '@/app/utils/models';
+import { ubuntu } from '@/app/utils/Fonts';
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.5, delayChildren: 0.3 }},
@@ -17,7 +17,6 @@ const Heading = {
 
 const Web = ({web}: {web: webProjectModel[]}) => {
 
-    const {ubuntu} = useAppTheme()
 
     return (
         <section id='WebProjects' className='relative overflow-hidden myContainer py-[5rem]'>
