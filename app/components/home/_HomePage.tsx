@@ -28,7 +28,7 @@ const _HomePage = (props: props) => {
   const {themeColor} = useAppTheme();
 
   useEffect(() => {
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, []); 
 
   return (

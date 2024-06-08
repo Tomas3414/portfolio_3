@@ -1,4 +1,4 @@
-import { lato, monsterRat, poppins, roboto, robotoMono } from "@/app/utils/Fonts"
+import { poppins, robotoMono } from "@/app/utils/Fonts"
 import { RefObject } from "react"
 import { LuSend } from "react-icons/lu";
 
@@ -13,7 +13,7 @@ const ContactForm = (props: props) => {
                 </span>
             </div>
             <form className='w-full flex p-4 flex-col' style={poppins.style}>
-                <div className="flex gap-4 w-full mb-4" >
+                <div className="flex flex-col md:flex-row gap-4 w-full mb-4" >
                     <div className="w-full">
                         <label htmlFor="name" className="block mb-2 text-base font-medium text-gray-600 dark:text-gray-300">Your Name</label>
                         <input type="text" id="name" name="name" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-gray-800 dark:border-gray-700 dark:focus:ring-indigo-900 dark:text-gray-100" placeholder="John Doe" />

@@ -1,13 +1,10 @@
-'use client'
 
 import { motion } from 'framer-motion'
 import Link from "next/link"
-import { LuGithub, LuPhoneForwarded, LuSend } from "react-icons/lu";
+import { LuGithub, LuPhoneForwarded } from "react-icons/lu";
 import { FaLinkedinIn, FaWhatsapp, FaFacebookF } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 import { robotoMono } from "@/app/utils/Fonts";
-import { useRef } from 'react';
-import ContactForm from './ContactForm';
 
 const links = [
   { url: 'https://github.com/Moinak-Majumdar', toolTip: 'GitHub', color: '#181717', icon: <LuGithub /> },
@@ -20,15 +17,11 @@ const links = [
 interface props { classList: string }
 const SocialMedia = ({ classList }: props) => {
 
-  const modalRef = useRef<HTMLDialogElement>(null)
 
   return (
     <>
       <section className={`${classList} flex flex-col`}>
-        <button onClick={() => modalRef.current?.showModal()} className="flex items-center dark:text-slate-300 text-slate-700 group cursor-pointer outline-none" title='Contact form'>
-          <LuSend className='text-2xl group-hover:text-green-500 duration-500 ease-in-out' />
-          <span style={robotoMono.style}>: Send message</span>
-        </button>
+       
         <Link href="mailto:moinak2030@gmail.com" title="Email" className="flex items-center dark:text-slate-300 text-slate-700 group" target="_BLANK">
           <BiLogoGmail className="text-2xl group-hover:text-[#bb001b] duration-500 ease-in-out" />
           <span style={robotoMono.style}>: moinak2030@gmail.com</span>
@@ -55,7 +48,7 @@ const SocialMedia = ({ classList }: props) => {
           })}
         </div>
       </section>
-      <ContactForm modalRef={modalRef} />
+      
     </>
   )
 }

@@ -6,6 +6,8 @@ import AnimatedHeading from "./AnimatedHeading";
 import { ModeSwitch1 } from "./ModeSwitch";
 import HamBurger from "./Hamburger";
 import { pacifico, roboto, ubuntu } from "@/app/utils/Fonts";
+import ContactForm from "./ContactForm";
+import { useRef } from "react";
 
 const link = [
   { name: 'Home', url: '/' },
@@ -16,6 +18,7 @@ const link = [
 export default function Navbar() {
 
   const pathName = usePathname();
+  const modalRef = useRef<HTMLDialogElement>(null)
 
   return (
     <>
@@ -29,13 +32,17 @@ export default function Navbar() {
               </Link>
             )
           })}
-          <Link href='mailto:moinak2030@gmail.com' className={`hidden md:inline-block font-semibold text-base lg:text-xl cursor-pointer px-2 py-1 rounded-md dark:bg-slate-800 bg-gray-200 dark:text-gray-300 text-gray-700 ${roboto.className}`}>
-            Let&apos;s talk !
-          </Link>
+          {pathName === '/' ? <Link href='#HireMe' style={roboto.style} className='hidden md:inline-block font-semibold text-base lg:text-xl cursor-pointer px-2 py-1 rounded-md dark:bg-slate-800 bg-gray-200 dark:text-gray-300 text-gray-700'>
+              Let&apos;s talk !
+            </Link> : <button onClick={() => modalRef.current?.showModal()} style={roboto.style} className='hidden md:inline-block font-semibold text-base lg:text-xl cursor-pointer px-2 py-1 rounded-md dark:bg-slate-800 bg-gray-200 dark:text-gray-300 text-gray-700 w-fit outline-none'>
+              Let&apos;s talk !
+            </button>
+          }
         </nav>
       </header>
       <ModeSwitch1 />
       <HamBurger />
+      <ContactForm modalRef={modalRef} />
     </>
   )
 }

@@ -1,11 +1,12 @@
 import { Variants, motion } from 'framer-motion'
-import Image from 'next/image'
 import { IoDesktopOutline, IoServerSharp } from 'react-icons/io5'
 import { AiFillApi, AiFillSetting, AiOutlineMobile } from 'react-icons/ai'
 import { FiPackage } from 'react-icons/fi'
 import AnimatedHeading from '../others/AnimatedHeading'
 import { Background, BackgroundOption } from '../others/Background'
 import { poppins, roboto, ubuntu } from '@/app/utils/Fonts'
+import Lottie from 'lottie-react'
+import techLottie from '@/public/assets/lottie/tech2.json'
 
 
 interface props {themeColor: string }
@@ -16,7 +17,7 @@ const Tech = ({themeColor }: props) => {
             <div className='myContainer py-[4rem] dark:text-gray-300 text-gray-800'>
                 <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between">
                     <motion.div variants={Left} transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }} className='flex items-center'>
-                        <Image src='/assets/image/tools2.png' height={600} width={800} alt='tools_img.png' className='h-auto w-auto' />
+                        <Lottie animationData={techLottie} loop={true}  />
                     </motion.div>
                     <motion.div initial='closed' whileInView='open' viewport={{ once: false, amount: 0.1 }} variants={rightOuterVariants} className='flex flex-col mt-10 lg:mt-0 w-full lg:w-1/2'>
                         <motion.div variants={Heading}>
