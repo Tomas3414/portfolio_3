@@ -16,7 +16,7 @@ const AboutMe = ({ themeColor }: props) => {
             A small<span className="font-bold ml-2">Introduction</span>
           </h1>
           <article style={monsterRat.style}>
-            <p className="dark:text-gray-300 text-gray-700">
+            <p className="dark:text-gray-300 text-gray-700 font-medium">
             Passionate self-taught developer with a lifelong love for coding. Skilled in full-stack development, mobile app creation, and UX design. Eager to turn innovative ideas into reality.
             </p>
           </article>

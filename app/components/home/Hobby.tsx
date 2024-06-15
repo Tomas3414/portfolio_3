@@ -33,7 +33,7 @@ export default function Hobby({ data, themeColor }: { data: photographyModel[], 
                             <span className="font-bold mr-2">Fragrance of</span>
                             my rooftop
                         </h1>
-                        <p style={monsterRat.style} className='text-lg mt-4 max-w-[35rem]'>Being a versatile person, I have a pretty large list of my pastimes. One of the ones I enjoy doing is gardening and clicking on good photos of those with my cell phone.
+                        <p style={monsterRat.style} className='text-lg font-medium mt-4 max-w-[35rem]'>Being a versatile person, I have a pretty large list of my pastimes. One of the ones I enjoy doing is gardening and clicking on good photos of those with my cell phone.
                         </p>
                         <div className="flex flex-col justify-center gap-4 mt-2">
                             <Link className='font-semibold flex gap-2 items-center' href='https://www.motorola.in/smartphones-motorola-one-macro/p' target='_blank'>

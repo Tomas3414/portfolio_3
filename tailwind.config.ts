@@ -18,6 +18,16 @@ const config: Config = {
         '35r': '35rem',
         '40r': '40rem'
       },
+      keyframes: {
+        shift: {
+          '0%, 25%': { 'background-position': '0%, 50%' },
+          '50%, 75%': { 'background-position': '50%, 100%' },
+          '100': { 'background-position': '100%, 0%' },
+        }
+      },
+      animation: {
+        shift: 'shift 5s linear infinite'
+      }
     },
     screens: {
       'xs': '480px',
@@ -27,16 +37,6 @@ const config: Config = {
       'xl': '1280px',
       '2xl': '1536px',
     },
-    keyframes: {
-      shift: {
-        '0%, 25%': { 'background-position': '0%, 50%' },
-        '50%, 75%': { 'background-position': '50%, 100%' },
-        '100': { 'background-position': '100%, 0%' },
-      }
-    },
-    animation: {
-      shift: 'shift 5s linear infinite'
-    }
   },
   plugins: [],
   darkMode: "class",
