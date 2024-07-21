@@ -7,6 +7,7 @@ import { Background, BackgroundOption } from "./components/others/Background"
 import { FaTerminal } from "react-icons/fa";
 import Ring from "./components/others/Ring"
 import { comicNeue, lato, poppins, robotoMono } from "./utils/Fonts"
+import SendMsgBtn from "./components/others/SendMsgBtn"
 
 const outerVariants: Variants = {
     closed: { transition: { staggerChildren: 0.3, staggerDirection: -1 } },
@@ -50,7 +51,8 @@ export default function ErrorBoundary({ error, reset }: props) {
                         <motion.p variants={innerVariants} className='mt-6 text-sm' style={poppins.style}>
 
                         </motion.p>
-                        <motion.div variants={innerVariants} className='mt-6'>
+                        <motion.div variants={innerVariants}>
+                            <SendMsgBtn className="my-4"/>
                             <SocialMedia classList='flex justify-center gap-4 text-white' />
                         </motion.div>
                     </motion.div>

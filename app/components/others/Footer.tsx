@@ -2,14 +2,14 @@
 
 import { Variants, motion } from 'framer-motion'
 import Link from "next/link";
-import { AiFillFacebook, AiFillLinkedin, AiFillGithub, } from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub, } from "react-icons/ai";
 
 import FooterStyle from '@/app/css/Footer.module.css'
 import { useAppTheme } from '../theme/AppTheme';
 import { useTheme } from 'next-themes';
 import { monsterRat, poppins, roboto, robotoMono, ubuntu } from '@/app/utils/Fonts';
 import { useRef } from 'react';
-import ContactForm from './ContactForm';
+import SendMsgModal from './SendMsgModal';
 
 
 function Footer() {
@@ -28,14 +28,14 @@ function Footer() {
                             <button onClick={() => modalRef.current?.showModal()} className={`${ubuntu.className} text-4xl font-bold outline-none cursor-pointer w-fit`}>Lets talk</button>
                         </div>
                         <div className="flex flex-col mt-4 md:mt-auto">
-                            <h4 className='font-bold'>Drop a mail</h4>
-                            <a href="mailto:moinak2030@gmail.com">moinak2030@gmail.com</a>
+                            <h4 style={ubuntu.style} className='font-bold'>Full Stack</h4>
+                            <p style={monsterRat.style}>Mobile & Web Developer</p>
                         </div>
                         <div className="space-y-1 mt-4 md:mt-auto">
-                            <p className="text-base text-left md:text-right font-bold">
+                            <p style={ubuntu.style} className="text-base text-left md:text-right font-bold">
                                 Follow me at
                             </p>
-                            <div className="flex items-center md:justify-end gap-2">
+                            <div className="flex items-center gap-2">
                                 {socialLinks.map((link) => (
                                     <Link key={link.name} href={link.url} title={link.name} className="text-2xl" target="_blank">
                                         {link.icon}
@@ -71,7 +71,7 @@ function Footer() {
                     </div>
                 </motion.div>
             </motion.footer>
-            <ContactForm modalRef={modalRef}/>
+            <SendMsgModal modalRef={modalRef}/>
         </>
     );
 }
@@ -95,7 +95,6 @@ const smooth2: Variants = {
     open: { opacity: 1, y: 0, transition: { delay: .5, type: 'spring', stiffness: 300 } }
 }
 const socialLinks = [
-    { name: "Facebook", url: "https://www.facebook.com/moinak.majumdar.9", icon: <AiFillFacebook />, },
     { name: "Linkedin", url: "https://www.linkedin.com/in/moinak-majumdar", icon: <AiFillLinkedin />, },
     { name: "Github", url: "https://github.com/Moinak-Majumdar", icon: <AiFillGithub /> },
 ];

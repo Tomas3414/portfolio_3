@@ -9,7 +9,7 @@ import contactAction from "@/app/actions/contact";
 
 interface props { modalRef: RefObject<HTMLDialogElement> }
 
-const ContactForm = (props: props) => {
+const SendMsgModal = (props: props) => {
 
     const formRef = useRef<HTMLFormElement>(null)
 
@@ -38,7 +38,7 @@ const ContactForm = (props: props) => {
                     </span>
                 </div>
                 <form ref={formRef} action={action} className='w-full flex p-4 flex-col' style={poppins.style}>
-                    <FormComponents />
+                    <ContactForm />
                 </form>
             </dialog>
             <ToastContainer position="top-right" pauseOnHover newestOnTop stacked />
@@ -46,7 +46,7 @@ const ContactForm = (props: props) => {
     )
 }
 
-function FormComponents() {
+function ContactForm() {
 
     const { pending } = useFormStatus();
 
@@ -79,4 +79,4 @@ function FormComponents() {
 
 }
 
-export default ContactForm
+export default SendMsgModal

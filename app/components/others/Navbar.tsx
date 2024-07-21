@@ -6,7 +6,7 @@ import AnimatedHeading from "./AnimatedHeading";
 import { ModeSwitch1 } from "./ModeSwitch";
 import HamBurger from "./Hamburger";
 import { pacifico, roboto, ubuntu } from "@/app/utils/Fonts";
-import ContactForm from "./ContactForm";
+import SendMsgModal from "./SendMsgModal";
 import { useRef } from "react";
 
 const link = [
@@ -42,7 +42,7 @@ export default function Navbar() {
       </header>
       <ModeSwitch1 />
       <HamBurger />
-      <ContactForm modalRef={modalRef} />
+      <SendMsgModal modalRef={modalRef} />
     </>
   )
 }

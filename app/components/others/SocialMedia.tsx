@@ -2,15 +2,13 @@
 import { motion } from 'framer-motion'
 import Link from "next/link"
 import { LuGithub, LuPhoneForwarded } from "react-icons/lu";
-import { FaLinkedinIn, FaWhatsapp, FaFacebookF } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 import { robotoMono } from "@/app/utils/Fonts";
 
 const links = [
   { url: 'https://github.com/Moinak-Majumdar', toolTip: 'GitHub', color: '#181717', icon: <LuGithub /> },
   { url: 'https://www.linkedin.com/in/moinak-majumdar', toolTip: 'Linkedin', color: '#0A66C2', icon: <FaLinkedinIn /> },
-  { url: 'https://www.facebook.com/moinak.majumdar.9', toolTip: 'Facebook', color: '#1877F2', icon: <FaFacebookF /> },
-  { url: 'https://api.whatsapp.com/send?phone=+919804139678&text=I%20like%20your%20work', toolTip: 'Whatsapp', color: '#25D366', icon: <FaWhatsapp /> },
 ]
 
 
@@ -19,17 +17,7 @@ const SocialMedia = ({ classList }: props) => {
 
 
   return (
-    <>
-      <section className={`${classList} flex flex-col`}>
-       
-        <Link href="mailto:moinak2030@gmail.com" title="Email" className="flex items-center dark:text-slate-300 text-slate-700 group" target="_BLANK">
-          <BiLogoGmail className="text-2xl group-hover:text-[#bb001b] duration-500 ease-in-out" />
-          <span style={robotoMono.style}>: moinak2030@gmail.com</span>
-        </Link>
-        <Link href="tel:+919804139678" title="Phone" className="flex items-center dark:text-slate-300 text-slate-700 group" target="_BLANK">
-          <LuPhoneForwarded className="text-2xl duration-500 ease-in-out group-hover:text-[#6236ff]" />
-          <span style={robotoMono.style}>: +91-9804139678</span>
-        </Link>
+   <section className={`${classList} flex flex-col`}>
         <div className="flex items-center justify-start w-fit gap-2">
           {links.map((curr, i) => {
             return (
@@ -48,8 +36,6 @@ const SocialMedia = ({ classList }: props) => {
           })}
         </div>
       </section>
-      
-    </>
   )
 }
 
