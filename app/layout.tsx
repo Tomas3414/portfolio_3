@@ -31,6 +31,10 @@ export default function RootLayout({ children }: props) {
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/logo_bg.png" type='image/png' sizes="500x500" />
+        <link rel="apple-touch-icon" href="/logo_bg.png" type='image/png' sizes="500x500" />
+      </head>
       <body className='bg-white dark:bg-[#000011] text-gray-800 dark:text-gray-200'>
         <AppTheme>
           <Navbar />
