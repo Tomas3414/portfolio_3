@@ -1,12 +1,12 @@
+import { lato, monsterRat, roboto, robotoMono, ubuntu } from "@/app/utils/Fonts";
+import { photographyModel } from "@/app/utils/models";
 import { Variants, motion } from "framer-motion";
 import Image from "next/legacy/image";
-import AnimatedHeading from "../others/AnimatedHeading";
-import { Background, BackgroundOption } from "../others/Background";
 import Link from "next/link";
-import { photographyModel } from "@/app/utils/models";
-import { lato, monsterRat, roboto, robotoMono, ubuntu } from "@/app/utils/Fonts";
 import { FaMobileAlt } from "react-icons/fa";
 import { IoFlowerSharp } from "react-icons/io5";
+import AnimatedHeading from "../others/AnimatedHeading";
+import { Background, BackgroundOption } from "../others/Background";
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } },
@@ -60,8 +60,8 @@ export default function Hobby({ data, themeColor }: { data: photographyModel[], 
                 </motion.div>
             </div>
             {/* background */}
-            <div className="absolute w-full h-full md:w-1/3 top-0 left-0 -z-10">
-                <div className='absolute w-full h-full inset-0 bg-gradient-to-l z-10 dark:from-[#000011] from-[#ffffff]'></div>
+            <div className="absolute w-full h-full md:w-1/3 lg:w-1/2 top-0 right-0 -z-10">
+                <div className='absolute w-full h-full inset-0 bg-gradient-to-r z-10 dark:from-[#000011] from-[#ffffff]'></div>
                 <Background option={BackgroundOption.body} />
                 <div className='absolute w-full h-full inset-0 bg-gradient-to-t z-10 dark:from-[#000011] from-[#ffffff]'></div>
             </div>

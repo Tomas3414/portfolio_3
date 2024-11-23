@@ -84,15 +84,15 @@ const timeline = [
   {
     name: "Post Graduation",
     sub: "Machine Learning, Database Management system, Data Structures and Algorithms, Computer Networks, Software Engineering, Operating System",
-    date: 'oct 2022 - ',
-    from: "Currently pursuing Masters In Computer Application (MCA) from Maulana Abul Kalam Azad University of Technology, West Bengal, India",
-    grade: "8.87 (CGPA)"
+    date: 'oct 2022 - july 2024',
+    from: "Earned a Master’s degree in Computer Applications (MCA) from Maulana Abul Kalam Azad University of Technology, West Bengal, India.",
+    grade: "8.83 (CGPA)"
   },
   {
     name: "Graduation",
     sub: 'OOP, computer system architecture, operating system, data structure and algorithm, database management systems, computer networks, fundamentals of artificial intelligence, digital image processing and computer graphics.',
     date: 'jun 2019 - july 2022',
-    from: 'Completed B.Sc computer science from Barrackpore Rastraguru Surendranath College (West Bengal State University), West Bengal.',
+    from: 'Obtained a Bachelor of Science (B.Sc.) degree in Computer Science from Barrackpore Rastraguru Surendranath College, affiliated with West Bengal State University, West Bengal.',
     grade: '9.59 (CGPA)'
   },
   {

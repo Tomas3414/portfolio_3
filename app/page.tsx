@@ -1,54 +1,34 @@
 
 import _HomePage from './components/home/_HomePage';
-import { ServerData} from './utils/ServerData';
-import { flutterProjectModel, photographyModel, webProjectModel } from './utils/models';
+import DevFlag from './components/others/DevFlag';
+import { ServerData } from './utils/ServerData';
+import { photographyModel } from './utils/models';
 
-async function getFlutterProjects() {
-  const data = new ServerData({path: 'getAllFlutter'});
-
+async function pageData() {
+  const data = new ServerData({ path: '/landing' });
   const res = await data.get();
-
-  if(!res.ok) {
-      throw new Error('Failed to fetch flutter project data.');
-  }
-
-  return [...await res.json()];
-}
-
-async function getWebProjects() {
-  const data =new ServerData({path: 'getAllWeb'});
-
-  const res = await data.get();
-
   if (!res.ok) {
-      throw new Error("Failed to fetch web project data.");
+    throw new Error('Failed to fetch page data.')
   }
-
-  return [...await res.json()];
-}
-
-async function getPhotography() {
-  const data = new ServerData({path: 'getAllPhotography'});
-
-  const res = await data.get();
-
-  if (!res.ok) {
-      throw new Error('Failed to fetch hobby data.');
-  }
-
-  const list: photographyModel[] = await res.json();
-  const random = Math.floor(Math.random() * (list.length - 4));
-  return [...list.slice(random, random + 4)]
+  return await res.json()
 }
 
 
 export default async function Home() {
 
-  const flutterProjects: flutterProjectModel[] = await getFlutterProjects();
-  const webProjects: webProjectModel[] = await getWebProjects();
-  const photography: photographyModel[] = await getPhotography(); 
+  const data = await pageData()
+
+  const list: photographyModel[] = data['photography'];
+  const random = Math.floor(Math.random() * (list.length - 4));
 
   return (
-    <_HomePage flutterProjects={flutterProjects} webProjects={webProjects} photography={photography} />
+    <main>
+      <DevFlag />
+      <_HomePage
+        flutterProjects={data['flutter']}
+        webProjects={data['web']}
+        photography={[...list.slice(random, random + 4)]}
+      />
+    </main>
   );
 }

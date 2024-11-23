@@ -26,7 +26,7 @@ interface props { error: Error, reset: () => void }
 export default function ErrorBoundary({ error, reset }: props) {
 
     return (
-        <main className="relative text-gray-800 dark:text-gray-300">
+        <main className="relative text-gray-800 dark:text-gray-300 max-h-[100vh] overflow-y-hidden">
             <div className='flex min-w-full min-h-screen justify-center items-center px-4'>
                 <motion.div initial='closed' animate='open' variants={inner1} className='relative p-8 rounded-3xl w-fit sm:w-35r flex flex-col overflow-hidden bg-transparent backdrop-blur-sm shadow-2xl bg-slate-200 dark:bg-slate-800 dark:shadow-slate-900 shadow-slate-300'>
                     <motion.div variants={outerVariants} initial='closed' animate='open'>

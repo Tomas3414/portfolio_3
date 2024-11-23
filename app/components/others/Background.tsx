@@ -1,12 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Image from 'next/legacy/image'
-import bodyLight from '@/public/assets/svg/body-light.svg'
 import bodyDark from '@/public/assets/svg/body-dark.svg'
-import patternLight from '@/public/assets/svg/pattern-light.svg'
+import bodyLight from '@/public/assets/svg/body-light.svg'
 import patternDark from '@/public/assets/svg/pattern-dark.svg'
+import patternLight from '@/public/assets/svg/pattern-light.svg'
 import { useTheme } from 'next-themes'
+import Image from 'next/legacy/image'
+import { useEffect, useState } from 'react'
 
 
 enum BackgroundOption { body = "body", pattern = 'pattern' }
@@ -59,4 +59,4 @@ function Background({ option, className = "", w, h, layout, position, objFit }: 
 
 }
 
-export { Background, BackgroundOption };
+export { Background, BackgroundOption }

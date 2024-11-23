@@ -10,26 +10,14 @@ import { flutterProjectModel, webProjectModel } from "../utils/models";
 type data = { web: webProjectModel[], flutter: flutterProjectModel[] }
 
 async function fetchData(): Promise<data> {
-    const webData = new ServerData({ path: 'getAllWeb' });
-    const web = await webData.get();
+    const data = new ServerData({path: '/project'});
+    const res = await data.get();
 
-    const flutterData = new ServerData({ path: 'getAllFlutter' });
-    const flutter = await flutterData.get();
-
-    if (!web.ok) {
-        throw new Error("Failed to fetch web project data.");
+    if(!res.ok) {
+        throw new Error('Failed to fetch project page data.')
     }
 
-    if (!flutter.ok) {
-        throw new Error('Failed to fetch flutter project data.');
-    }
-
-    const data: data = {
-        web: await web.json(),
-        flutter: await flutter.json(),
-    }
-
-    return data;
+    return await res.json();
 }
 
 export default async function Projects() {
