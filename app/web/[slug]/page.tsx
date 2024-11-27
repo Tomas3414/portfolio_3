@@ -1,11 +1,11 @@
-import DevFlag from "@/app/components/others/DevFlag";
 import AnimatedHeading from "@/app/components/others/AnimatedHeading";
-import { Ubuntu } from "next/font/google";
-import Details from "../components/Details";
-import Bg from "../components/Bg";
-import { Metadata, ResolvingMetadata } from "next";
+import DevFlag from "@/app/components/others/DevFlag";
 import { ServerData } from "@/app/utils/ServerData";
 import { webProjectModel } from "@/app/utils/models";
+import { Metadata, ResolvingMetadata } from "next";
+import { Ubuntu } from "next/font/google";
+import Bg from "../components/Bg";
+import Details from "../components/Details";
 
 const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
@@ -15,7 +15,7 @@ async function fetchDetails(slug: string) {
     
     const data = new ServerData({ path: 'getWeb' });
 
-    const res = await data.get({ body: { slug } });
+    const res = await data.request({ body: { slug } });
 
     if (!res.ok) {
         throw new Error(`Failed to fetch web project : ${slug}`)

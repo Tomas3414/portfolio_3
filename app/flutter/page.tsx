@@ -4,23 +4,26 @@ import { flutterProjectModel } from "../utils/models";
 import MainSection from "./components/Main";
 
 async function getFlutterProjects() {
-  const data = new ServerData({path: 'getAllFlutter'});
+  const data = new ServerData({ path: 'pageBased' });
+  const body = {
+    pathName: 'flutter',
+    isShort: true,
+  }
+  const res = await data.request({ body });
 
-  const res = await data.get();
-
-  if(!res.ok) {
-      throw new Error('Failed to fetch flutter project data.');
+  if (!res.ok) {
+    throw new Error('Failed to fetch flutter project data.');
   }
 
-  return [...await res.json()];
+  return await res.json();
 }
 
 const page = async () => {
 
-  const flutterProjects:flutterProjectModel[] = await getFlutterProjects();  
+  const data = await getFlutterProjects();
 
   return (
-    <MainSection data={flutterProjects} />
+    <MainSection data={data['flutter']} />
   )
 }
 
@@ -33,11 +36,11 @@ export const metadata: Metadata = {
   publisher: "Vercel",
   metadataBase: new URL('https://moinak05.vercel.app/'),
   openGraph: {
-      type: 'website',
-      title: 'Moinak Majumdar | Flutter',
-      description: "Dive into our Flutter projects page to witness the seamless fusion of creativity and functionality in our mobile applications. From engaging user experiences to efficient performance, explore how we leverage Flutter's capabilities to craft captivating mobile solutions that stand out in today's competitive landscape",
-      images: 'https://avatars.githubusercontent.com/u/99950805?v=4',
-      url: 'https://moinak05.vercel.app/',
+    type: 'website',
+    title: 'Moinak Majumdar | Flutter',
+    description: "Dive into our Flutter projects page to witness the seamless fusion of creativity and functionality in our mobile applications. From engaging user experiences to efficient performance, explore how we leverage Flutter's capabilities to craft captivating mobile solutions that stand out in today's competitive landscape",
+    images: 'https://avatars.githubusercontent.com/u/99950805?v=4',
+    url: 'https://moinak05.vercel.app/',
   },
 }
 

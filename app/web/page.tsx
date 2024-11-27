@@ -1,27 +1,30 @@
 import { Metadata } from "next";
 import { ServerData } from "../utils/ServerData";
 import { webProjectModel } from "../utils/models";
-import { MainSection } from "./components/Main"
+import { MainSection } from "./components/Main";
 
 async function getWebProjects() {
-    const data = new ServerData({ path: 'getAllWeb' });
-
-    const res = await data.get();
+    const data = new ServerData({ path: 'pageBased' });
+    const body = {
+        pathName: 'web',
+        isShort: true,
+    }
+    const res = await data.request({ body });
 
     if (!res.ok) {
         throw new Error("Failed to fetch web project data.");
     }
 
-    return [...await res.json()];
+    return await res.json();
 }
 
 
 const page = async () => {
 
-    const webProjects: webProjectModel[] = await getWebProjects();
+    const data = await getWebProjects();
 
     return (
-        <MainSection data={webProjects} />
+        <MainSection data={data['web']} />
     )
 }
 

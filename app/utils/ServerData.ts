@@ -13,7 +13,7 @@ class ServerData {
         this.revalidate = params.revalidate ?? 3600;
     }
 
-    async get(params: getParams = { body: {} }): Promise<Response> {
+    async request(params: getParams = { body: {} }): Promise<Response> {
         const res = await fetch(this.uri, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
@@ -26,4 +26,4 @@ class ServerData {
 
 }
 
-export { ServerData }
+export { ServerData };

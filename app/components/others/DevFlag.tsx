@@ -4,7 +4,7 @@ import DevFlagModal from './DevFlagModal';
 async function getStatus() {
     try {
         const data = new ServerData({ path: '/getStatus', revalidate: 0 })
-        const res = await data.get();
+        const res = await data.request();
         return await res.json()
     } catch (error) {
         throw new Error('Failed to fetch development status flag info.')

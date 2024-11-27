@@ -5,8 +5,12 @@ import { ServerData } from './utils/ServerData';
 import { photographyModel } from './utils/models';
 
 async function pageData() {
-  const data = new ServerData({ path: '/landing' });
-  const res = await data.get();
+  const data = new ServerData({ path: 'services' });
+  const body = {
+    services: ["flutter", "web", "photography"],
+    isShort: true,
+  }
+  const res = await data.request({ body });
   if (!res.ok) {
     throw new Error('Failed to fetch page data.')
   }

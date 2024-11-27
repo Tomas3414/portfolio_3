@@ -1,9 +1,9 @@
-import { Metadata } from "next";
 import DevFlag from "@/app/components/others/DevFlag";
-import Details from "./components/Details";
-import Bg from "./components/Bg";
 import { photographyModel } from "@/app/utils/models";
+import { Metadata } from "next";
 import { ServerData } from "../utils/ServerData";
+import Bg from "./components/Bg";
+import Details from "./components/Details";
 
 function shuffle(array: photographyModel[]) {
     let currentIndex = array.length;
@@ -21,10 +21,12 @@ function shuffle(array: photographyModel[]) {
   }
 
 async function fetchBlossoms() {
-    const data = new ServerData({ path: 'getAllPhotography' });
-
-    const res = await data.get();
-
+    const data = new ServerData({ path: 'pageBased' });
+    const body = {
+        pathName: 'blossoms',
+        isShort: true,
+    }
+    const res = await data.request({ body });
     if (!res.ok) {
         throw new Error('Failed to fetch hobby data.');
     }
@@ -34,8 +36,8 @@ async function fetchBlossoms() {
 
 export default async function Blossoms() {
 
-
-    const photo: photographyModel[] = shuffle(await fetchBlossoms());
+    const data = await fetchBlossoms()
+    const photo= shuffle(data['photography']);
 
     return (
         <>

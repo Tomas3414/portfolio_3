@@ -1,19 +1,23 @@
 import DevFlag from "@/app/components/others/DevFlag";
-import Web from "./components/Web";
-import Flutter from "./components/Flutter";
-import Bg from "./components/Bg";
 import { Metadata } from "next";
 import { ServerData } from "../utils/ServerData";
 import { flutterProjectModel, webProjectModel } from "../utils/models";
+import Bg from "./components/Bg";
+import Flutter from "./components/Flutter";
+import Web from "./components/Web";
 
 
 type data = { web: webProjectModel[], flutter: flutterProjectModel[] }
 
 async function fetchData(): Promise<data> {
-    const data = new ServerData({path: '/project'});
-    const res = await data.get();
+    const data = new ServerData({ path: 'services' });
+    const body = {
+        services: ["flutter", "web"],
+        isShort: true,
+    }
+    const res = await data.request({ body });
 
-    if(!res.ok) {
+    if (!res.ok) {
         throw new Error('Failed to fetch project page data.')
     }
 
