@@ -1,10 +1,8 @@
 
-import { motion } from 'framer-motion'
-import Link from "next/link"
-import { LuGithub, LuPhoneForwarded } from "react-icons/lu";
+import { motion } from 'framer-motion';
+import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa6";
-import { BiLogoGmail } from "react-icons/bi";
-import { robotoMono } from "@/app/utils/Fonts";
+import { LuGithub } from "react-icons/lu";
 
 const links = [
   { url: 'https://github.com/Moinak-Majumdar', toolTip: 'GitHub', color: '#181717', icon: <LuGithub /> },

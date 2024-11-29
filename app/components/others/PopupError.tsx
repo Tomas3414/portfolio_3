@@ -1,27 +1,26 @@
 import { Variants, motion } from 'framer-motion'
 import { Dispatch, SetStateAction } from 'react'
 import { MdOutlineWarning, MdOutlineHighlightOff } from 'react-icons/md'
-import { Comic_Neue, Lato } from 'next/font/google';
 import SocialMedia from './SocialMedia'
+import { comicNeue, poppins } from '@/app/utils/Fonts'
 
-const comicNeue = Comic_Neue({ display: 'swap', weight: ['700'], subsets: ['latin'] });
-const lato =  Lato({display: 'swap', weight:['400', '700'], subsets: ['latin']});
+
 
 const outerVariants: Variants = {
     closed: { transition: { staggerChildren: 0.3, staggerDirection: -1 } },
-    open: { transition: { staggerChildren: 0.3, delayChildren: 0.3 }}
+    open: { transition: { staggerChildren: 0.3, delayChildren: 0.3 } }
 }
 const inner1: Variants = {
-    closed: { y: '100vh'},
-    open: { y: 0, transition: { duration: 0.5, delay: 0.5 }}
+    closed: { y: '100vh' },
+    open: { y: 0, transition: { duration: 0.5, delay: 0.5 } }
 }
 const innerVariants: Variants = {
     closed: { y: 50, opacity: 0 },
-    open: { y: 0, opacity: 1, transition: { delay: 1 }}
+    open: { y: 0, opacity: 1, transition: { delay: 1 } }
 }
 
 interface props {
-    errors: string, setErrors: Dispatch<SetStateAction<null|string>>
+    errors: string, setErrors: Dispatch<SetStateAction<null | string>>
 }
 const PopupError = ({ errors, setErrors }: props) => {
 
@@ -33,7 +32,7 @@ const PopupError = ({ errors, setErrors }: props) => {
                         <MdOutlineWarning className='text-4xl md:text-6xl mx-auto' />
                     </motion.div>
                     <motion.h1 variants={innerVariants} className='mt-8 font-comicNeue text-xl md:text-2xl font-normal' style={comicNeue.style}>{errors}</motion.h1>
-                    <motion.h2 variants={innerVariants} className='mt-6 font-ubuntu font-bold text-xl' style={lato.style}>Wait sometime or report to the developer.</motion.h2>
+                    <motion.h2 variants={innerVariants} className='mt-6 font-ubuntu font-bold text-xl' style={poppins.style}>Wait sometime or report to the developer.</motion.h2>
                     <motion.div variants={innerVariants} className='mt-4'>
                         <SocialMedia classList='flex justify-start gap-4 text-white' />
                     </motion.div>

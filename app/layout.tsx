@@ -8,8 +8,8 @@ import Footer from './components/others/Footer'
 
 
 export const metadata: Metadata = {
-  title: 'Moinak Majumdar | Home',
-  description: "Hey! this is @moinak05, A passionate full stack web and flutter developer from India, Explore my comprehensive portfolio showcasing expertise in full stack web and Flutter mobile app development.  Let's bring your ideas to life with creativity and precision. ",
+  title: 'Moinak Majumdar | Web (MERN) & Flutter Developer',
+  description: "Hey! this is @moinak05, A passionate self taught developer expert in bringing your digital ideas to life with creativity and precision.",
   authors: [{ name: 'Moinak Majumdar', url: 'https://www.linkedin.com/in/moinak-majumdar' }],
   keywords: ['Web Development', 'Flutter Projects', 'Responsive Design', 'Mobile App Development', 'Innovative Technology', 'User Experience (UX)', 'Front-end Development', 'Full-stack Development', 'Web Applications', 'Flutter Apps', 'UI/UX Design', 'Cross-Platform Development', 'Interactive Interfaces', 'Digital Innovation',],
   creator: "Moinak Majumdar",
@@ -17,11 +17,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://moinak05.vercel.app/'),
   openGraph: {
     type: 'website',
-    title: 'Moinak Majumdar | Home',
-    description: "Hey! this is @moinak05, A passionate full stack web and flutter developer from India, Explore my comprehensive portfolio showcasing expertise in full stack web and Flutter mobile app development.  Let's bring your ideas to life with creativity and precision. ",
+    title: 'Moinak Majumdar | Web (MERN) & Flutter Developer',
+    description: "Hey! this is @moinak05, A passionate self taught developer expert in bringing your digital ideas to life with creativity and precision.",
     images: 'https://avatars.githubusercontent.com/u/99950805?v=4',
     url: 'https://moinak05.vercel.app/',
   },
+  icons: {icon: "/logo_bg.png", apple: 'logo_bg.png'}
 }
 
 interface props { children: ReactNode }
@@ -31,10 +32,6 @@ export default function RootLayout({ children }: props) {
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/logo_bg.png" type='image/png' sizes="500x500" />
-        <link rel="apple-touch-icon" href="/logo_bg.png" type='image/png' sizes="500x500" />
-      </head>
       <body className='bg-white dark:bg-[#000011] text-gray-800 dark:text-gray-200'>
         <AppTheme>
           <Navbar />

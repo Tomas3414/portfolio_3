@@ -28,6 +28,7 @@ export default async function Projects() {
 
     const data = await fetchData();
 
+
     return (
         <>
             <DevFlag />

@@ -25,6 +25,7 @@ const Details = ({ Data }: { Data: T_Web }) => {
     const router = useRouter();
     const links = [{ url: Data.liveUrl, icon: <FaLink />, text: 'Live Url' }, { url: Data.gitRepo, icon: <FaGithub />, text: 'Git Repositories' }]
 
+
     return (
         <motion.div variants={outerVariants} viewport={{ once: false, amount: 0.2 }} initial='closed' animate='open' className="flex flex-col">
             <div className="flex flex-col justify-center w-full">

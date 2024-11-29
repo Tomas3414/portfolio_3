@@ -1,12 +1,12 @@
 'use client'
 
-import { Variants, motion, useScroll, useTransform, } from 'framer-motion'
+import { monsterRat, poppins, ubuntu } from '@/app/utils/Fonts';
+import { Variants, motion, useScroll, useTransform, } from 'framer-motion';
+import { useRef } from 'react';
+import { TbArrowsDownUp } from 'react-icons/tb';
 import ReactTypingEffect from 'react-typing-effect';
-import { TbArrowsDownUp } from 'react-icons/tb'
-import { useRef } from 'react'
 import { useAppTheme } from '../theme/AppTheme';
 import { HeroBg } from './HeroBg';
-import { poppins, roboto, robotoMono, ubuntu } from '@/app/utils/Fonts';
 
 const viewport = {
     once: false,
@@ -78,8 +78,8 @@ export default function Hero() {
                     </motion.div>
                     <motion.article variants={Bottom} className="mt-4 text-base lg:text-lg dark:text-gray-400 text-slate-700">
                         <p>
-                            <span className='font-bold mr-1' style={robotoMono.style}>Welcome to my portfolio!</span>
-                            <span style={roboto.style}>
+                            <span className={`mr-1 px-1.5 py-0.5 rounded text-slate-200  ${poppins.className}`} style={{backgroundColor: themeColor}}>Welcome to my portfolio!</span>
+                            <span style={monsterRat.style} className=''>
                                 I&apos;m a passionate full-stack web developer with a focus on Dart/Flutter development. I specialize in crafting dynamic and responsive web and mobile applications that deliver exceptional user experiences. Through this platform, I invite you to explore a collection of my projects, each demonstrating my dedication to innovation and creativity in the world of web and mobile development. Take a journey through my portfolio and discover the exciting possibilities that these technologies can bring to your digital projects.
                             </span>
                         </p>

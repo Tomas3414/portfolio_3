@@ -51,7 +51,7 @@ export async function generateMetadata({ params, searchParams }: metaDataProps, 
     const Data: flutterProjectModel = await fetchDetails(params.slug);
 
     return {
-        title: `Moinak Majumdar | ${Data.name}`,
+        title: `Moinak Majumdar | Flutter project - ${Data.name}`,
         description: Data.intro,
         authors: [{ name: 'Moinak Majumdar', url: 'https://www.linkedin.com/in/moinak-majumdar' }],
         keywords: ['flutter', 'android', 'open source', 'app development', 'mobile app development', 'ios development'],
@@ -60,9 +60,10 @@ export async function generateMetadata({ params, searchParams }: metaDataProps, 
         metadataBase: new URL('https://moinak05.vercel.app/'),
         openGraph: {
             type: 'website',
-            title: `Moinak Majumdar | ${Data.name}`,
+            title: `Moinak Majumdar | Flutter project - ${Data.name}`,
             description: Data.intro,
             images: Data.cover,
-        }
+        },
+        alternates: { canonical: Data.gitRepo }
     }
 }

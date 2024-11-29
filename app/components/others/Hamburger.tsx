@@ -12,7 +12,7 @@ import { useAppTheme } from '../theme/AppTheme'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { ModeSwitch2 } from './ModeSwitch'
-import { poppins, roboto, robotoMono, ubuntu } from '@/app/utils/Fonts'
+import { poppins, ubuntu } from '@/app/utils/Fonts'
 
 interface I_links { name: string, link: string, icon: ReactNode }
 
@@ -80,7 +80,7 @@ export default function HamBurger() {
                                         </motion.div>
                                     )
                                 })}
-                                <motion.div variants={liVariants} className='mt-16 flex justify-center items-center w-full' style={roboto.style}>
+                                <motion.div variants={liVariants} className='mt-16 flex justify-center items-center w-full' style={poppins.style}>
                                     <ModeSwitch2 />
                                 </motion.div>
                             </motion.div>

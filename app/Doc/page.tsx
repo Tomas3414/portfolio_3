@@ -1,11 +1,11 @@
 'use client'
 
 import AnimatedHeading from "@/app/components/others/AnimatedHeading";
+import { Background, BackgroundOption } from "@/app/components/others/Background";
 import DevFlag from "@/app/components/others/DevFlag";
 import Ring from "@/app/components/others/Ring";
 import { useAppTheme } from "@/app/components/theme/AppTheme";
-import { Background, BackgroundOption } from "@/app/components/others/Background";
-import { poppins, roboto } from "../utils/Fonts";
+import { poppins, ubuntu } from "../utils/Fonts";
 
 
 export default function Doc() {
@@ -21,7 +21,7 @@ export default function Doc() {
                 <div className='myContainer flex justify-center items-center min-h-screen  dark:text-gray-300 text-gray-800'>
                     <div className='p-6 rounded-md backdrop-blur-sm  dark:bg-slate-900/30 bg-gray-100/30 shadow-2xl dark:shadow-black shadow-gray-200'>
                         <AnimatedHeading classList="mt-8 uppercase text-3xl" title='Page Replaced' />
-                        <article style={roboto.style} className="md:max-w-xl">
+                        <article style={ubuntu.style} className="md:max-w-xl">
                             <h1 style={poppins.style} className='text-2xl font-semibold'>Can&apos;t find web project?</h1>
                             <p className='text-lg mt-4'>
                                 I hope this message finds you well. I want to inform you about an important update regarding this platform. The route name <span style={{ color: themeColor }} className='font-bold'>Doc</span> has been updated to <span style={{ color: themeColor }} className='font-bold '>Web</span> to better reflect our services.

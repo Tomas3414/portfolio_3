@@ -1,4 +1,4 @@
-import { lato, monsterRat, roboto, robotoMono, ubuntu } from "@/app/utils/Fonts";
+import { monsterRat, poppins, ubuntu } from "@/app/utils/Fonts";
 import { photographyModel } from "@/app/utils/models";
 import { Variants, motion } from "framer-motion";
 import Image from "next/legacy/image";
@@ -16,6 +16,11 @@ const innerVariants: Variants = {
     open: { x: 0, y: 0, opacity: 1, transition: { type: 'spring', stiffness: 150 } },
     closed: { x: -200, y: 50, opacity: 0, }
 };
+const innerVariants2: Variants = {
+    open: { x: 0, y: 0, opacity: 1, transition: { type: 'spring', stiffness: 150 } },
+    closed: { x: 0, y: 100, opacity: 0, }
+};
+
 const Heading = {
     closed: { opacity: 0.5, },
     open: { opacity: 1, transition: { delay: 0.2, } }
@@ -29,22 +34,18 @@ export default function Hobby({ data, themeColor }: { data: photographyModel[], 
                 <motion.div initial='closed' whileInView='open' viewport={{ once: true, amount: 0.3 }} variants={outerVariants} className="flex flex-col justify-start">
                     <motion.div variants={Heading}>
                         <AnimatedHeading classList="tracking-wide text-lg uppercase" font={ubuntu} title='Blossoms' />
-                        <h1 className="text-4xl md:text-5xl mb-4">
+                        <h3 className="text-4xl md:text-5xl mb-4">
                             <span className="font-bold mr-2">Fragrance of</span>
                             my rooftop
-                        </h1>
-                        <p style={monsterRat.style} className='text-lg font-medium mt-4 max-w-[35rem]'>Being a versatile person, I have a pretty large list of my pastimes. One of the ones I enjoy doing is gardening and clicking on good photos of those with my cell phone.
+                        </h3>
+                        <p style={poppins.style} className='font-medium mt-4 max-w-[35rem]'>Being a versatile person, I have a pretty large list of my pastimes. One of the ones I enjoy doing is gardening and clicking on good photos of those with my cell phone.
                         </p>
                         <div className="flex flex-col justify-center gap-4 mt-2">
                             <Link className='font-semibold flex gap-2 items-center' href='https://www.motorola.in/smartphones-motorola-one-macro/p' target='_blank'>
-                                <span style={roboto.style}>My device</span>
+                                <span style={ubuntu.style}>My device</span>
                                 <FaMobileAlt />
                                 <span>-</span>
-                                <span className="font-bold" style={robotoMono.style}>Motorola One Macro</span>
-                            </Link>
-                            <Link href='/blossoms' style={lato.style} className='text-lg font-semibold cursor-pointer px-4 py-2 bg-slate-600/10 dark:bg-white/20 rounded-md flex justify-center w-fit items-center gap-2' scroll={false}>
-                                <IoFlowerSharp style={{color: themeColor}}/>
-                                <span>View all blossoms</span>
+                                <span className="font-bold">Motorola One Macro</span>
                             </Link>
                         </div>
                     </motion.div>
@@ -57,6 +58,12 @@ export default function Hobby({ data, themeColor }: { data: photographyModel[], 
                             )
                         })}
                     </div>}
+                    <motion.div variants={innerVariants2} className="mt-6 mx-auto w-fit">
+                        <Link href='/blossoms' className='text-lg font-semibold cursor-pointer px-4 py-2 bg-slate-600/10 dark:bg-white/20 rounded-md flex justify-center w-fit items-center gap-2 ' style={monsterRat.style}  scroll={false}>
+                            <IoFlowerSharp style={{ color: themeColor }} />
+                            <span>Show More</span>
+                        </Link>
+                    </motion.div>
                 </motion.div>
             </div>
             {/* background */}

@@ -36,7 +36,7 @@ const HireMe = () => {
                     <Image src='/assets/image/me.jpg' height={600} width={450} alt='me.jpg' title="yeah!, It's me" />
                 </motion.div>
                 <motion.div variants={Right} className='ml-0 lg:ml-24 lg:w-[70%] w-full flex flex-col'>
-                    <h1 className='text-xl lg:text-2xl animate-bounce text-center xl:text-left' style={{ ...comicNeue.style, color: themeColor }}>I&apos;d Love to Hear from You</h1>
+                    <h3 className='text-xl lg:text-2xl animate-bounce text-center xl:text-left' style={{ ...comicNeue.style, color: themeColor }}>I&apos;d Love to Hear from You</h3>
                     <div className='flex flex-col my-2 text-center xl:text-left'>
                         <article style={comicNeue.style}>
                             <p className='mt-2 text-sm lg:text-lg text-gray-800 dark:text-gray-300'>

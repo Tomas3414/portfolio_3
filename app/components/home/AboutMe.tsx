@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
-import AnimatedHeading from '../others/AnimatedHeading'
-import { Background, BackgroundOption } from '../others/Background'
-import {roboto, ubuntu, monsterRat, robotoMono, comicNeue} from '@/app/utils/Fonts';
+import { comicNeue, monsterRat, poppins, ubuntu } from '@/app/utils/Fonts';
+import { motion } from 'framer-motion';
+import AnimatedHeading from '../others/AnimatedHeading';
+import { Background, BackgroundOption } from '../others/Background';
 
 interface props { themeColor: string }
 const AboutMe = ({ themeColor }: props) => {
@@ -10,30 +10,30 @@ const AboutMe = ({ themeColor }: props) => {
   return (
     <>
       <div className="myContainer p-10 z-10 dark:text-gray-200 text-gray-800">
-        <div className="flex flex-col w-full lg:text-lg">
+        <div className="flex flex-col w-full">
           <AnimatedHeading classList="tracking-wide text-lg" title='ABOUT ME' />
-          <h1 className="text-4xl lg:text-5xl mb-4" style={ubuntu.style}>
+          <h3 className="text-4xl lg:text-5xl mb-4" style={ubuntu.style}>
             A small<span className="font-bold ml-2">Introduction</span>
-          </h1>
-          <article style={monsterRat.style}>
+          </h3>
+          <article style={poppins.style}>
             <p className="dark:text-gray-300 text-gray-700 font-medium">
-            Passionate self-taught developer with a lifelong love for coding. Skilled in full-stack development, mobile app creation, and UX design. Eager to turn innovative ideas into reality.
+              Passionate self-taught developer with a lifelong love for coding. Skilled in full-stack development, mobile app creation, and UX design. Eager to turn innovative ideas into reality.
             </p>
           </article>
-          <h2 className="mt-4 text-2xl font-bold" style={ubuntu.style}>Timeline</h2>
+          <h4 className="mt-4 text-2xl font-bold" style={ubuntu.style}>Timeline</h4>
           <motion.ul initial='closed' whileInView='open' viewport={{ once: true, amount: 0.3 }} variants={leftOuterVariants} className="dark:text-slate-400 text-slate-700">
             {timeline.map((curr, index) => {
               return (
                 <motion.li variants={leftInnerVariants} key={index} className='mt-4  flex flex-col pl-5 border-l-2 dark:border-slate-600 border-slate-700'>
-                  <h1 className='text-lg lg:text-xl font-semibold dark:text-gray-300 text-gray-700' style={ubuntu.style}>{curr.name}</h1>
-                  <h4 className={`${roboto.className} font-bold text-xs uppercase`} style={{ color: themeColor }}>{curr.date}</h4>
-                  <p className="mt-2 dark:text-gray-400 text-gray-800" style={comicNeue.style}>{curr.from}</p>
+                  <p className='text-lg lg:text-xl font-semibold dark:text-gray-300 text-gray-700' style={monsterRat.style}>{curr.name}</p>
+                  <p className={`${monsterRat.className} font-semibold text-xs uppercase`} style={{ color: themeColor }}>{curr.date}</p>
+                  <p className="mt-2 dark:text-gray-400 text-gray-800 font-semibold" style={comicNeue.style}>{curr.from}</p>
                   <ul className="list-disc list-inside mt-2 text-sm">
                     {curr.sub && <li>
-                      <span style={robotoMono.style} className="font-semibold mr-1 mb-1 text-slate-800 dark:text-slate-200">Course:</span>
-                      <span style={robotoMono.style}>{curr.sub}</span>
+                      <span style={poppins.style} className="font-semibold mr-1 mb-1 text-slate-800 dark:text-slate-200">Course:</span>
+                      <span style={poppins.style}>{curr.sub}</span>
                     </li>}
-                    <li style={robotoMono.style} className='text-sm'>
+                    <li style={poppins.style} className='text-sm'>
                       <span className="font-semibold mr-1 dark:text-slate-200 text-slate-800">Grade :</span>
                       <span className='font-semibold'>{curr.grade}</span>
                     </li>
@@ -63,7 +63,7 @@ export default AboutMe
 
 
 const Right = {
-  closed: { x: 0, y: -50, rotate: '-30deg', opacity: 0},
+  closed: { x: 0, y: -50, rotate: '-30deg', opacity: 0 },
   open: { x: -350, y: 150, rotate: '-40deg', opacity: 1 }
 }
 const Right2 = {

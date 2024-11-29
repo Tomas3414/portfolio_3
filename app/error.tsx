@@ -6,7 +6,7 @@ import SocialMedia from "./components/others/SocialMedia"
 import { Background, BackgroundOption } from "./components/others/Background"
 import { FaTerminal } from "react-icons/fa";
 import Ring from "./components/others/Ring"
-import { comicNeue, lato, poppins, robotoMono } from "./utils/Fonts"
+import { ubuntu, poppins,  } from "./utils/Fonts"
 import SendMsgBtn from "./components/others/SendMsgBtn"
 
 const outerVariants: Variants = {
@@ -33,7 +33,7 @@ export default function ErrorBoundary({ error, reset }: props) {
                         <motion.div variants={innerVariants} className='w-full'>
                             <MdOutlineWarning className='text-4xl md:text-6xl mx-auto text-red-500' />
                         </motion.div>
-                        <motion.div variants={innerVariants} className="mt-8 bg-slate-200 dark:bg-slate-900 rounded-md overflow-hidden" style={robotoMono.style}>
+                        <motion.div variants={innerVariants} className="mt-8 bg-slate-200 dark:bg-slate-900 rounded-md overflow-hidden" style={ubuntu.style}>
                             <div className="w-full px-2 py-1 bg-slate-700/20 flex items-center gap-2">
                                 <FaTerminal className="text-red-200" />
                                 <span className="text-red-500">ERROR</span>
@@ -43,7 +43,7 @@ export default function ErrorBoundary({ error, reset }: props) {
                                     &gt;
                                     <span className="font-semibold"> {error.name}</span>
                                     <span>: </span>
-                                    <span style={lato.style} className="">{error.message}</span>
+                                    <span style={ubuntu.style} className="">{error.message}</span>
                                 </p>
                                 <p className="mt-2">&gt; Unexpected error occurred. Wait sometime or report to the developer.</p>
                             </div>

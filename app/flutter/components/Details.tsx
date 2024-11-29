@@ -10,7 +10,7 @@ import { AiOutlineRollback } from 'react-icons/ai';
 import Button from '@/app/components/others/Button';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { poppins, roboto, ubuntu } from '@/app/utils/Fonts';
+import { poppins, ubuntu } from '@/app/utils/Fonts';
 
 
 const outerVariants = { open: { transition: { staggerChildren: 0.2, delayChildren: 0.5 } }, closed: { transition: { staggerChildren: 0.7, staggerDirection: -1 } } };
@@ -64,7 +64,7 @@ const Details = ({ Data }: { Data: T_Flutter }) => {
                 </div>
                 <ImgSlider2 images={Data.img} fade={true}/>
                 <div className="mt-16 flex flex-col items-start">
-                    <h3 className="text-2xl font-bold" style={roboto.style}>Pub Dependencies :</h3>
+                    <h3 className="text-2xl font-bold" style={ubuntu.style}>Pub Dependencies :</h3>
                     <p className="mt-2" style={poppins.style}>
                         {Data.libraries.toString().replaceAll(',', ", ")}
                     </p>

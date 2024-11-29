@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+  <url>
+    <loc>https://moinak05.vercel.app/</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/projects</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/blossoms</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/web/lifoodie</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/web/photoboss</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/web/crms</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/web/geoground</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/web/schedulerio</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/web/nanolinker</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/web/gitscan</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/flutter/pixelperks</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://moinak05.vercel.app/assets/doc/Moinak-Majumdar_Resume.pdf</loc>
+    <lastmod>2024-11-29T19:08:20+00:00</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+
+</urlset>

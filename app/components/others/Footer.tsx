@@ -7,7 +7,7 @@ import { AiFillLinkedin, AiFillGithub, } from "react-icons/ai";
 import FooterStyle from '@/app/css/Footer.module.css'
 import { useAppTheme } from '../theme/AppTheme';
 import { useTheme } from 'next-themes';
-import { monsterRat, poppins, roboto, robotoMono, ubuntu } from '@/app/utils/Fonts';
+import { comicNeue, poppins, ubuntu } from '@/app/utils/Fonts';
 import { useRef } from 'react';
 import SendMsgModal from './SendMsgModal';
 
@@ -21,19 +21,19 @@ function Footer() {
     return (
         <>
             <motion.footer initial='closed' whileInView='open' viewport={viewport} variants={outerVariants} className='w-full pt-[4rem] pl-4 md:pl-10 lg:pl-16 xl:pl-36 2xl:pl-44 flex flex-col text-white pb-5'>
-                <div className={isClient && resolvedTheme === 'dark' ? FooterStyle.dark : FooterStyle.light} style={roboto.style}>
+                <div className={isClient && resolvedTheme === 'dark' ? FooterStyle.dark : FooterStyle.light} style={poppins.style}>
                     <motion.div variants={smooth} className="w-[90%] flex md:justify-between justify-center flex-col md:flex-row">
                         <div className="flex flex-col justify-start">
-                            <h2 style={ubuntu.style}>Something in mind</h2>
+                            <h5 style={ubuntu.style}>Something in mind</h5>
                             <button onClick={() => modalRef.current?.showModal()} className={`${ubuntu.className} text-4xl font-bold outline-none cursor-pointer w-fit`}>Lets talk</button>
                         </div>
                         <div className="flex flex-col mt-4 md:mt-auto">
-                            <h4 style={ubuntu.style} className='font-bold'>Full Stack</h4>
-                            <p style={monsterRat.style}>Mobile & Web Developer</p>
+                            <h5 style={ubuntu.style} className='font-bold'>Full Stack</h5>
+                            <p style={comicNeue.style}>Mobile & Web Developer</p>
                         </div>
                         <div className="space-y-1 mt-4 md:mt-auto">
                             <p style={ubuntu.style} className="text-base text-left md:text-right font-bold">
-                                Follow me at
+                                Join me at
                             </p>
                             <div className="flex items-center gap-2">
                                 {socialLinks.map((link) => (
@@ -45,14 +45,14 @@ function Footer() {
                         </div>
                     </motion.div>
                 </div>
-                <motion.div variants={smooth2} style={monsterRat.style} className="my-4 px-4 md:px-20 w-[90%] flex md:justify-between justify-center flex-col-reverse md:flex-row dark:text-gray-300 text-gray-800 ">
-                    <h1 style={poppins.style} className="my-auto">
-                        <span>Copyright {new Date().getFullYear()} - All rights reserved.</span> <br />
+                <motion.div variants={smooth2} style={comicNeue.style} className="my-4 px-4 md:px-20 w-[90%] flex md:justify-between justify-center flex-col-reverse md:flex-row dark:text-gray-300 text-gray-800 ">
+                    <p style={poppins.style} className="my-auto">
+                        <span>&copy; Copyright {new Date().getFullYear()} - All rights reserved.</span> <br />
                         <span>Designed and Developed by : </span>
-                        <span className={robotoMono.className} style={{ color: isClient ? themeColor : 'blue', fontWeight: 600 }}>moinak05</span>
-                    </h1>
+                        <span className={poppins.className} style={{ color: isClient ? themeColor : 'blue', fontWeight: 600 }}>moinak05</span>
+                    </p>
                     <div className="flex flex-col my-2 md:my-0">
-                        <h2 className="font-bold" style={roboto.style}>Credits</h2>
+                        <h4 className="font-bold" style={poppins.style}>Credits</h4>
                         <ul className="mt-2 list-disc list-inside" style={poppins.style}>
                             <li>
                                 <Link scroll={false} href="http://www.freepik.com" target='_blank'>image: upklyak/Freepik</Link>
@@ -71,7 +71,7 @@ function Footer() {
                     </div>
                 </motion.div>
             </motion.footer>
-            <SendMsgModal modalRef={modalRef}/>
+            <SendMsgModal modalRef={modalRef} />
         </>
     );
 }

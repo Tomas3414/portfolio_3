@@ -1,12 +1,12 @@
+import { monsterRat, poppins, ubuntu } from '@/app/utils/Fonts'
+import techLottie from '@/public/assets/lottie/tech2.json'
 import { Variants, motion } from 'framer-motion'
-import { IoDesktopOutline, IoServerSharp } from 'react-icons/io5'
+import Lottie from 'lottie-react'
 import { AiFillApi, AiFillSetting, AiOutlineMobile } from 'react-icons/ai'
 import { FiPackage } from 'react-icons/fi'
+import { IoDesktopOutline, IoServerSharp } from 'react-icons/io5'
 import AnimatedHeading from '../others/AnimatedHeading'
 import { Background, BackgroundOption } from '../others/Background'
-import { poppins, roboto, ubuntu } from '@/app/utils/Fonts'
-import Lottie from 'lottie-react'
-import techLottie from '@/public/assets/lottie/tech2.json'
 
 
 interface props {themeColor: string }
@@ -22,9 +22,9 @@ const Tech = ({themeColor }: props) => {
                     <motion.div initial='closed' whileInView='open' viewport={{ once: false, amount: 0.1 }} variants={rightOuterVariants} className='flex flex-col mt-10 lg:mt-0 w-full lg:w-1/2'>
                         <motion.div variants={Heading}>
                             <AnimatedHeading classList="tracking-wide text-lg" title='TOOLS & TECH' />
-                            <h1 className="text-4xl md:text-5xl mb-4" style={ubuntu.style}>
+                            <h3 className="text-4xl md:text-5xl mb-4" style={ubuntu.style}>
                                 My Personal<span className="font-bold ml-2">Favorites</span>
-                            </h1>
+                            </h3>
                         </motion.div>
                         <div className='grid grid-cols-2 md:grid-cols-3 gap-8 w-full px-auto md:px-0 mt-4'>
                             {compo.map((curr, index) => {
@@ -32,7 +32,7 @@ const Tech = ({themeColor }: props) => {
                                     <motion.div variants={rightInnerVariants} key={index} className='flex flex-col w-42 md:w-36'>
                                         <h1 className='text-3xl' style={{ color: themeColor }}>{curr.logo}</h1>
                                         <h2 className='text-xl font-semibold' style={poppins.style}>{curr.name}</h2>
-                                        <p className='mt-4' style={roboto.style}>{curr.tools}</p>
+                                        <p className='mt-4' style={monsterRat.style}>{curr.tools}</p>
                                     </motion.div>
                                 )
                             })}

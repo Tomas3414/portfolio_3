@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { ServerData } from "../utils/ServerData";
-import { webProjectModel } from "../utils/models";
 import { MainSection } from "./components/Main";
 
 async function getWebProjects() {

@@ -22,9 +22,9 @@ export default function WebProjects({data}: {data: webProjectModel[]}) {
             <motion.div initial='closed' whileInView='open' viewport={{ once: true, amount: 0.2 }} variants={outerVariants} className="flex flex-col justify-start">
                 <motion.div variants={Heading}>
                     <AnimatedHeading classList="tracking-wide text-lg" title="WEB PROJECTS" />
-                    <h1 className="text-4xl md:text-5xl mb-4">
+                    <h3 className="text-4xl md:text-5xl mb-4">
                         Learning<span className="font-bold ml-2">By Building</span>
-                    </h1>
+                    </h3>
                 </motion.div>
                 <div className='mt-4 p-4 md:p-8 xl:p-16 rounded-lg dark:bg-slate-900 bg-gray-100'>
                     {data && <div className="mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-16 relative">

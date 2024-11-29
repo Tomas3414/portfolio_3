@@ -1,4 +1,5 @@
 
+import { Metadata } from 'next';
 import _HomePage from './components/home/_HomePage';
 import DevFlag from './components/others/DevFlag';
 import { ServerData } from './utils/ServerData';
@@ -15,6 +16,10 @@ async function pageData() {
     throw new Error('Failed to fetch page data.')
   }
   return await res.json()
+}
+
+export const metadata: Metadata = {
+  alternates: { canonical: "https://schedulerio.vercel.app/" }
 }
 
 

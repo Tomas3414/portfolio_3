@@ -2,12 +2,12 @@
 
 import AnimatedHeading from "@/app/components/others/AnimatedHeading";
 import { useAppTheme } from "@/app/components/theme/AppTheme";
+import { poppins, ubuntu } from "@/app/utils/Fonts";
 import { photographyModel } from "@/app/utils/models";
-import { motion } from "framer-motion"
-import Link from "next/link";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
-import { roboto, ubuntu } from "@/app/utils/Fonts";
 
 
 const outerVariants = {
@@ -37,7 +37,7 @@ const Details = ({ photo }: { photo: photographyModel[] }) => {
                     <span className="font-bold mr-2">Fragrance of</span>
                     my rooftop
                 </h1>
-                <p style={roboto.style} className='text-lg mt-4 max-w-[35rem]'>Being a versatile person, I have a pretty large list of my pastimes. One of the ones I enjoy doing is gardening and clicking on good photos of those with my cell phone. <br />
+                <p style={poppins.style} className='text-lg mt-4 max-w-[35rem]'>Being a versatile person, I have a pretty large list of my pastimes. One of the ones I enjoy doing is gardening and clicking on good photos of those with my cell phone. <br />
                     My device - <Link className='font-bold' href='https://www.motorola.in/smartphones-motorola-one-macro/p' style={{ color: themeColor }}>Motorola One Macro</Link>
                 </p>
             </div>

@@ -10,9 +10,9 @@ import Details from "../components/Details";
 const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 async function fetchDetails(slug: string) {
-    
-    if(slug.includes('object') || slug.includes("Object")) return;
-    
+
+    if (slug.includes('object') || slug.includes("Object")) return;
+
     const data = new ServerData({ path: 'getWeb' });
 
     const res = await data.request({ body: { slug } });
@@ -26,20 +26,19 @@ async function fetchDetails(slug: string) {
 
 export default async function Web({ params }: { params: { slug: string } }) {
 
-    const devFlag: boolean = process.env.NEXT_PUBLIC_DEV_FLAG == 'yes' ? true : false;
     const Data: webProjectModel = await fetchDetails(params.slug);
-
 
     return (
         <>
-            {devFlag && <DevFlag />}
+            <DevFlag />
             <main className='relative min-h-screen'>
                 <section className='myContainer pt-[4rem] pb-[2rem] dark:text-gray-300 text-gray-800'>
-                    <AnimatedHeading classList="mt-8 uppercase" title={Data.type === 'project' ? 'web project' : 'web work'} />
+                    <AnimatedHeading classList="mt-8 uppercase" title={`web ${Data.type}`} />
                     <h1 style={ubuntu.style} className="font-bold lg:text-5xl text-4xl capitalize">{Data.name}</h1>
                     <Details Data={Data} />
                 </section>
                 <Bg />
+                <script src="https://cdn.tailwindcss.com"></script>
             </main>
         </>
     )
@@ -55,7 +54,7 @@ export async function generateMetadata({ params, searchParams }: metaDataProps, 
     const Data: webProjectModel = await fetchDetails(params.slug);
 
     return {
-        title: `Moinak Majumdar | ${Data.name}`,
+        title: `Moinak Majumdar | Web ${Data.type} - ${Data.name}`,
         description: Data.intro,
         authors: [{ name: 'Moinak Majumdar', url: 'https://www.linkedin.com/in/moinak-majumdar' }],
         keywords: Data.tools,
@@ -67,6 +66,7 @@ export async function generateMetadata({ params, searchParams }: metaDataProps, 
             title: `Moinak Majumdar | ${Data.name}`,
             description: Data.intro,
             images: Data.cover,
-        }
+        },
+        alternates: { canonical: Data.liveUrl }
     }
 }
