@@ -4,6 +4,7 @@ import { ServerData } from "@/app/utils/ServerData";
 import { webProjectModel } from "@/app/utils/models";
 import { Metadata, ResolvingMetadata } from "next";
 import { Ubuntu } from "next/font/google";
+import Script from "next/script";
 import Bg from "../components/Bg";
 import Details from "../components/Details";
 
@@ -32,13 +33,13 @@ export default async function Web({ params }: { params: { slug: string } }) {
         <>
             <DevFlag />
             <main className='relative min-h-screen'>
+                <Script src="https://cdn.tailwindcss.com"></Script>
                 <section className='myContainer pt-[4rem] pb-[2rem] dark:text-gray-300 text-gray-800'>
                     <AnimatedHeading classList="mt-8 uppercase" title={`web ${Data.type}`} />
                     <h1 style={ubuntu.style} className="font-bold lg:text-5xl text-4xl capitalize">{Data.name}</h1>
                     <Details Data={Data} />
                 </section>
                 <Bg />
-                <script src="https://cdn.tailwindcss.com"></script>
             </main>
         </>
     )
