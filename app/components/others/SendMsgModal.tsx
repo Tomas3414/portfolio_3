@@ -32,7 +32,7 @@ const SendMsgModal = (props: props) => {
         <>
             <dialog ref={props.modalRef} className="w-4/5 md:w-1/2 bg-white dark:bg-slate-800 rounded-md shadow-2xl dark:shadow-black fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 outline-none backdrop:bg-black/80">
                 <div className='flex justify-between text-slate-500 dark:text-blue-300  p-4'>
-                    <h1 className='text-xl lg:text-2xl font-bold' style={poppins.style}>Get in touch</h1>
+                    <h3 className='text-xl lg:text-2xl font-bold' style={poppins.style}>Get in touch</h3>
                     <span onClick={() => props.modalRef.current?.close()} style={ubuntu.style} className='ring-1 rounded-md text-xs h-fit p-1 ring-slate-900/10 dark:ring-slate-700/50 shadow-sm ml-3 cursor-pointer'>
                         Esc
                     </span>

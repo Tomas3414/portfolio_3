@@ -74,7 +74,7 @@ export default function Hero() {
 
                             <span className='ml-4'>and</span>
                         </h1>
-                        <h1 className="noSelection font-extrabold mt-2 xl:text-6xl lg:text-5xl text-4xl bg-gradient-to-b bg-clip-text text-transparent dark:from-white dark:to-[#38495a] from-slate-400 to-slate-800" style={ubuntu.style}>Full Stack Web Developer.</h1>
+                        <h2 className="noSelection font-extrabold mt-2 xl:text-6xl lg:text-5xl text-4xl bg-gradient-to-b bg-clip-text text-transparent dark:from-white dark:to-[#38495a] from-slate-400 to-slate-800" style={ubuntu.style}>Full Stack Web Developer.</h2>
                     </motion.div>
                     <motion.article variants={Bottom} className="mt-4 text-base lg:text-lg dark:text-gray-400 text-slate-700">
                         <p>
