@@ -1,13 +1,13 @@
 import DevFlag from "@/app/components/others/DevFlag";
+import { IFlutterProject, IWebProject } from "@/interface";
 import { Metadata } from "next";
 import { ServerData } from "../utils/ServerData";
-import { flutterProjectModel, webProjectModel } from "../utils/models";
 import Bg from "./components/Bg";
 import Flutter from "./components/Flutter";
 import Web from "./components/Web";
 
 
-type data = { web: webProjectModel[], flutter: flutterProjectModel[] }
+type data = { web: IWebProject[], flutter: IFlutterProject[] }
 
 async function fetchData(): Promise<data> {
     const data = new ServerData({ path: 'services' });

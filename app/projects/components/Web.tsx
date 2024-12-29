@@ -1,10 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import AnimatedHeading from '@/app/components/others/AnimatedHeading'
+import AnimatedHeading from '@/app/components/others/AnimatedHeading';
 import WebProjectCard from '@/app/components/others/WebProjectCard';
-import { webProjectModel } from '@/app/utils/models';
 import { ubuntu } from '@/app/utils/Fonts';
+import { IWebProject } from '@/interface';
+import { motion } from 'framer-motion';
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.5, delayChildren: 0.3 }},
@@ -15,7 +15,7 @@ const Heading = {
     open: { opacity: 1, transition: {delay: 0.5} }
 }
 
-const Web = ({web}: {web: webProjectModel[]}) => {
+const Web = ({web}: {web: IWebProject[]}) => {
 
 
     return (

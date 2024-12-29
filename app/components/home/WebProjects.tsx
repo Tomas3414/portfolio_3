@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import AnimatedHeading from '../others/AnimatedHeading'
 import WebProjectCard from '../others/WebProjectCard';
-import { webProjectModel } from '@/app/utils/models';
 import { ubuntu } from '@/app/utils/Fonts';
+import IWebProject from '@/interface/webProject';
 
 
 const outerVariants = {
@@ -15,7 +15,7 @@ const Heading = {
     open: { opacity: 1, transition: { delay: 0.2 } }
 }
 
-export default function WebProjects({data}: {data: webProjectModel[]}) {
+export default function WebProjects({data}: {data: IWebProject[]}) {
 
     return (
         <div className='myContainer my-4 md:my-9 xl:my-16 2xl:my-36 ' style={ubuntu.style}>

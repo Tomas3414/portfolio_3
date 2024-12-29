@@ -3,7 +3,7 @@
 import AnimatedHeading from "@/app/components/others/AnimatedHeading";
 import { useAppTheme } from "@/app/components/theme/AppTheme";
 import { poppins, ubuntu } from "@/app/utils/Fonts";
-import { photographyModel } from "@/app/utils/models";
+import { IPhotography } from "@/interface";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +21,7 @@ const innerVariants = {
 };
 
 
-const Details = ({ photo }: { photo: photographyModel[] }) => {
+const Details = ({ photo }: { photo: IPhotography[] }) => {
 
     const { themeColor } = useAppTheme();
 
@@ -42,12 +42,12 @@ const Details = ({ photo }: { photo: photographyModel[] }) => {
                 </p>
             </div>
             <motion.div variants={outerVariants} viewport={{ once: true }} initial='closed' whileInView='open'>
-                {photo && <div className="mx-auto mt-2 columns-1 md:columns-2 lg:columns-3 xl:columns-4 w-fit">
+                {photo && <div className="mx-auto mt-2 columns-1 md:columns-2 lg:columns-3 xl:columns-4 w-full">
                     {photo.map((curr, i) => {
                         return (
-                            <motion.div variants={innerVariants} className="group border border-white dark:border-slate-800 p-1 rounded-sm dark:bg-gray-200 bg-gray-800 w-fit mb-4" key={curr._id}>
+                            <motion.div variants={innerVariants} className="group border border-white dark:border-slate-800 p-1 rounded-sm dark:bg-gray-200 bg-gray-800 w-full mb-4" key={curr._id}>
                                 <Image src={curr.url} alt={curr.name} width={280} height={380}
-                                    className='rounded-sm lg:group-hover:opacity-85 duration-300'
+                                    className='rounded-sm lg:group-hover:opacity-85 duration-300 w-full'
                                     placeholder='blur' blurDataURL='/assets/image/imgPlaceholder.jpg'
                                 />
                             </motion.div>

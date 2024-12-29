@@ -1,14 +1,14 @@
 'use client'
 
-import { useEffect } from "react"
-import { webProjectModel } from "@/app/utils/models"
-import { motion } from "framer-motion"
-import { Ubuntu } from "next/font/google"
 import AnimatedHeading from "@/app/components/others/AnimatedHeading"
 import WebProjectCard from "@/app/components/others/WebProjectCard"
+import { IWebProject } from "@/interface"
+import { motion } from "framer-motion"
+import { Ubuntu } from "next/font/google"
+import { useEffect } from "react"
 
 
-export const MainSection = ({ data }: { data: webProjectModel[] }) => {
+export const MainSection = ({ data }: { data: IWebProject[] }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])

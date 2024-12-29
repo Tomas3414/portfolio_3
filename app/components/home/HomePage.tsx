@@ -1,16 +1,16 @@
 'use client'
 
+import { IFlutterProject, IPhotography, IWebProject } from "@/interface"
 import { motion } from "framer-motion"
-import Hero from "./Hero"
-import AboutMe from "./AboutMe"
-import Tech from "./Tech"
-import FlutterProjects from "./FlutterProjects"
-import Hobby from "./Hobby"
-import HireMe from "./HireMe"
-import WebProjects from "./WebProjects"
-import { useAppTheme } from "../theme/AppTheme"
 import { useEffect } from "react"
-import { flutterProjectModel, photographyModel, webProjectModel } from "@/app/utils/models"
+import { useAppTheme } from "../theme/AppTheme"
+import AboutMe from "./AboutMe"
+import FlutterProjects from "./FlutterProjects"
+import Hero from "./Hero"
+import HireMe from "./HireMe"
+import Hobby from "./Hobby"
+import Tech from "./Tech"
+import WebProjects from "./WebProjects"
 
 const viewport = {
   once: false,
@@ -22,14 +22,14 @@ const transition = {
   open: { staggerChildren: 0.3, delayChildren: 0.2 }
 }
 
-interface props {flutterProjects: flutterProjectModel[], webProjects: webProjectModel[], photography: photographyModel[]};
-const _HomePage = (props: props) => {
+interface props { flutterProjects: IFlutterProject[], webProjects: IWebProject[], photography: IPhotography[] };
+const HomePage = (props: props) => {
 
-  const {themeColor} = useAppTheme();
+  const { themeColor } = useAppTheme();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []); 
+  }, []);
 
   return (
     <>
@@ -47,7 +47,7 @@ const _HomePage = (props: props) => {
         <FlutterProjects data={props.flutterProjects} />
       </motion.section>
       <motion.section id='MyHobby' initial='closed' whileInView='open' viewport={viewport} transition={transition} className=' relative overflow-hidden'>
-        <Hobby data={props.photography} themeColor={themeColor}/>
+        <Hobby data={props.photography} themeColor={themeColor} />
       </motion.section>
       <motion.section id='HireMe' initial='closed' whileInView='open' viewport={viewport} transition={transition} className=' relative overflow-hidden myContainer py-[8rem]'>
         <HireMe />
@@ -56,4 +56,4 @@ const _HomePage = (props: props) => {
   )
 }
 
-export default _HomePage
+export default HomePage

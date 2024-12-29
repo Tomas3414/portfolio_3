@@ -1,7 +1,7 @@
 'use client'
 
 import FlutterProjects from '@/app/components/home//FlutterProjects'
-import { flutterProjectModel } from '@/app/utils/models'
+import { IFlutterProject } from '@/interface'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 
@@ -15,7 +15,7 @@ const transition = {
   open: { staggerChildren: 0.3, delayChildren: 0.2 }
 }
 
-const MainSection = ({data}: {data: flutterProjectModel[]}) => {
+const MainSection = ({data}: {data: IFlutterProject[]}) => {
 
   useEffect(() => {
     window.scrollTo(0,0);

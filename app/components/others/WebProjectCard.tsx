@@ -1,8 +1,7 @@
 'use client'
 
-import cardStyle from '@/app/css/WebCard2.module.css';
-import {  poppins, comicNeue, ubuntu } from "@/app/utils/Fonts";
-import { webProjectModel } from "@/app/utils/models";
+import cardStyle from '@/css/WebCard2.module.css';
+import { poppins, comicNeue, ubuntu } from "@/app/utils/Fonts";
 import { Variants, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from 'next/legacy/image';
@@ -10,6 +9,7 @@ import Link from "next/link";
 import { CSSProperties, useEffect, useState } from "react";
 import { useAppTheme } from "../theme/AppTheme";
 import AnimatedHeading from "./AnimatedHeading";
+import IWebProject from '@/interface/webProject';
 
 const outerVariants: Variants = {
     open: { transition: { staggerChildren: 0.1, delayChildren: 0.2, delay: .4 } },
@@ -21,7 +21,7 @@ const innerVariants: Variants = {
 };
 
 
-const WebProjectCard = ({ data }: { data: webProjectModel }) => {
+const WebProjectCard = ({ data }: { data: IWebProject }) => {
     const { themeColor } = useAppTheme();
     const [webCardCss, setWebCardCss] = useState<string>();
     const [shadow, setShadow] = useState<string>();
@@ -34,7 +34,7 @@ const WebProjectCard = ({ data }: { data: webProjectModel }) => {
 
     return (
         <Link href={`web/${data.slug}`} scroll={false} className="relative">
-            <motion.section className="relative group rounded-2xl" whileTap={{ scale: 0.9 }} style={{boxShadow: shadow}}>
+            <motion.section className="relative group rounded-2xl" whileTap={{ scale: 0.9 }} style={{ boxShadow: shadow }}>
                 <div className="-translate-x-6 -translate-y-6 xl:-translate-x-7 xl:-translate-y-6 absolute top-0 z-20">
                     <Image src={data.cover} width={650} height={400} alt={`${data.name}-cover pic`} className="rounded-lg overflow-hidden" placeholder='blur' blurDataURL='/assets/image/imgPlaceholder.jpg' />
                 </div>
@@ -52,7 +52,7 @@ const WebProjectCard = ({ data }: { data: webProjectModel }) => {
                                 <p style={comicNeue.style} className={`-translate-y-4 xl:translate-y-0 mb-0 xl:mb-2 px-2 py-1 rounded-full text-xs font-semibold text-center text-white w-fit ${data.status == 'completed' ? 'bg-green-500' : 'bg-red-500'}`}>
                                     {data.status}
                                 </p>
-                                <AnimatedHeading title={data.name} classList="text-xl xl:text-2xl capitalize"  />
+                                <AnimatedHeading title={data.name} classList="text-xl xl:text-2xl capitalize" />
                             </motion.div>
                             <motion.p variants={innerVariants} className='mt-2 text-sm text-slate-700 dark:text-slate-300'>{data.intro}</motion.p>
                             <motion.p variants={innerVariants} style={comicNeue.style} className='mt-4 font-semibold text-sm group-hover:text-blue-500 px-4 py-2 rounded-lg w-fit dark:bg-slate-700  dark:text-slate-300 bg-gray-200 text-slate-600'>Read More</motion.p>

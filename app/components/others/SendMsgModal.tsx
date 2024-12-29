@@ -1,4 +1,4 @@
-import { poppins, ubuntu} from "@/app/utils/Fonts"
+import { poppins, ubuntu } from "@/app/utils/Fonts"
 import { useFormStatus } from "react-dom";
 import { RefObject, useRef } from "react"
 import { LuSend } from "react-icons/lu";
@@ -54,21 +54,21 @@ function ContactForm() {
         <>
             <div className="flex flex-col md:flex-row gap-4 w-full mb-4" >
                 <div className="w-full">
-                    <label htmlFor="name" className="block mb-2 text-base font-medium text-gray-600 dark:text-gray-300">Your Name</label>
-                    <input type="text" id="name" name="name" required className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-gray-800 dark:border-gray-700 dark:focus:ring-indigo-900 dark:text-gray-100 disabled:cursor-none" placeholder="John Doe" disabled={pending} />
+                    <label htmlFor="visitor-name" className="block mb-2 text-base font-medium text-gray-600 dark:text-gray-300">Your Name</label>
+                    <input type="text" id="visitor-name" aria-label="visitor-name" name="name" required className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-gray-800 dark:border-gray-700 dark:focus:ring-indigo-900 dark:text-gray-100 disabled:cursor-none" placeholder="John Doe" disabled={pending} />
                 </div>
                 <div className="w-full">
-                    <label htmlFor="email" className="block mb-2 text-base font-medium text-gray-600 dark:text-gray-300">Your Email</label>
-                    <input type="email" id="email" name="email" required className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-gray-800 dark:border-gray-700 dark:focus:ring-indigo-900 dark:text-gray-100 disabled:cursor-none" placeholder="john_doe@email.com" disabled={pending} />
+                    <label htmlFor="visitor-email" className="block mb-2 text-base font-medium text-gray-600 dark:text-gray-300">Your Email</label>
+                    <input type="email" id="visitor-email" aria-label="visitor-email" name="email" required className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-gray-800 dark:border-gray-700 dark:focus:ring-indigo-900 dark:text-gray-100 disabled:cursor-none" placeholder="john_doe@email.com" disabled={pending} />
                 </div>
             </div>
             <div className="relative mb-4">
-                <label htmlFor="subject" className="block mb-2 text-base font-medium text-gray-600 dark:text-gray-300">Subject</label>
-                <input type="text" id="subject" name="subject" required className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-gray-800 dark:border-gray-700 dark:focus:ring-indigo-900 dark:text-gray-100 disabled:cursor-none" placeholder="What's this about?"  disabled={pending} />
+                <label htmlFor="visitor-subject" className="block mb-2 text-base font-medium text-gray-600 dark:text-gray-300">Subject</label>
+                <input type="text" id="visitor-subject" aria-label="visitor-subject" name="subject" required className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-gray-800 dark:border-gray-700 dark:focus:ring-indigo-900 dark:text-gray-100 disabled:cursor-none" placeholder="What's this about?" disabled={pending} />
             </div>
             <div className="relative mb-4">
-                <label htmlFor="message" className="block mb-2 text-base font-medium text-gray-600 dark:text-gray-300">Your Message</label>
-                <textarea id="message" name="message" required className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-sm outline-none text-gray-700 p-2 resize-none leading-6 transition-colors duration-200 ease-in-out dark:bg-gray-800 dark:border-gray-700 dark:focus:ring-indigo-900 dark:text-gray-100 disabled:cursor-none" placeholder="Let me know how can I help you ..." disabled={pending}></textarea>
+                <label htmlFor="visitor-message" className="block mb-2 text-base font-medium text-gray-600 dark:text-gray-300">Your Message</label>
+                <textarea id="visitor-message" aria-label="visitor-message" name="message" required className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-sm outline-none text-gray-700 p-2 resize-none leading-6 transition-colors duration-200 ease-in-out dark:bg-gray-800 dark:border-gray-700 dark:focus:ring-indigo-900 dark:text-gray-100 disabled:cursor-none" placeholder="Let me know how can I help you ..." disabled={pending}></textarea>
             </div>
             <button type="submit" style={ubuntu.style} className="text-white bg-indigo-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-500 rounded-lg text-lg flex items-center w-fit ml-auto gap-2 disabled:cursor-none" disabled={pending}>
                 {pending ? <IoReload className="text-xl animate-spin" /> : <LuSend className="text-xl" />}

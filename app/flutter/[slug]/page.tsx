@@ -1,7 +1,7 @@
 import AnimatedHeading from "@/app/components/others/AnimatedHeading";
 import DevFlag from "@/app/components/others/DevFlag";
 import { ServerData } from "@/app/utils/ServerData";
-import { flutterProjectModel } from "@/app/utils/models";
+import IFlutterProject from "@/interface/flutterProject";
 import { Metadata, ResolvingMetadata } from "next";
 import { Ubuntu } from "next/font/google";
 import Bg from "../components/Bg";
@@ -24,7 +24,7 @@ async function fetchDetails(slug: string) {
 export default async function Flutter({ params }: { params: { slug: string } }) {
 
     const devFlag: boolean = process.env.NEXT_PUBLIC_DEV_FLAG == 'yes' ? true : false;
-    const Data: flutterProjectModel = await fetchDetails(params.slug);
+    const Data: IFlutterProject = await fetchDetails(params.slug);
 
 
     return (
@@ -48,7 +48,7 @@ type metaDataProps = {
 }
 export async function generateMetadata({ params, searchParams }: metaDataProps, parent: ResolvingMetadata): Promise<Metadata> {
 
-    const Data: flutterProjectModel = await fetchDetails(params.slug);
+    const Data: IFlutterProject = await fetchDetails(params.slug);
 
     return {
         title: `Moinak Majumdar | Flutter project - ${Data.name}`,

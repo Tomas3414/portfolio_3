@@ -4,7 +4,7 @@ import { Variants, motion } from 'framer-motion'
 import Link from "next/link";
 import { AiFillLinkedin, AiFillGithub, } from "react-icons/ai";
 
-import FooterStyle from '@/app/css/Footer.module.css'
+import FooterStyle from '@/css/Footer.module.css'
 import { useAppTheme } from '../theme/AppTheme';
 import { useTheme } from 'next-themes';
 import { comicNeue, poppins, ubuntu } from '@/app/utils/Fonts';
@@ -24,11 +24,11 @@ function Footer() {
                 <div className={isClient && resolvedTheme === 'dark' ? FooterStyle.dark : FooterStyle.light} style={poppins.style}>
                     <motion.div variants={smooth} className="w-[90%] flex md:justify-between justify-center flex-col md:flex-row">
                         <div className="flex flex-col justify-start">
-                            <h5 style={ubuntu.style}>Something in mind</h5>
+                            <h4 style={ubuntu.style}>Something in mind</h4>
                             <button onClick={() => modalRef.current?.showModal()} className={`${ubuntu.className} text-4xl font-bold outline-none cursor-pointer w-fit`}>Lets talk</button>
                         </div>
                         <div className="flex flex-col mt-4 md:mt-auto">
-                            <h5 style={ubuntu.style} className='font-bold'>Full Stack</h5>
+                            <h4 style={ubuntu.style} className='font-bold'>Full Stack</h4>
                             <p style={comicNeue.style}>Mobile & Web Developer</p>
                         </div>
                         <div className="space-y-1 mt-4 md:mt-auto">

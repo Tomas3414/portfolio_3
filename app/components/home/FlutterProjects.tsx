@@ -1,8 +1,8 @@
+import { ubuntu } from "@/app/utils/Fonts";
+import { IFlutterProject } from "@/interface";
 import { Variants, motion } from "framer-motion";
 import AnimatedHeading from "../others/AnimatedHeading";
 import FlutterCard from "../others/FlutterCard";
-import { flutterProjectModel } from "@/app/utils/models";
-import { ubuntu } from "@/app/utils/Fonts";
 
 
 const outerVariants = {
@@ -15,7 +15,7 @@ const Heading: Variants = {
     open: { opacity: 1, transition: { delay: 0.2 } }
 }
 
-export default function FlutterProjects({data}: {data: flutterProjectModel[]}) {
+export default function FlutterProjects({ data }: { data: IFlutterProject[] }) {
 
     return (
         <div className='myContainer py-[5rem] dark:text-gray-300 text-gray-800' style={ubuntu.style}>

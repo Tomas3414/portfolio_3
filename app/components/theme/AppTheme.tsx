@@ -14,8 +14,8 @@ const variants: Variants = {
 
 const themeColors = ['#2dd4bf', '#22d3ee', '#eab308', '#22c55e', '#0ea5e9', '#ec4899', '#f97316', '#ef4444', '#a855f7', '#3b82f6', '#6366f1', '#64748b']
 
-type appThemeType = { isClient: boolean ,themeColor: string}
-let AppThemeContext: Context<appThemeType>
+interface IThemeType { isClient: boolean, themeColor: string }
+let AppThemeContext: Context<IThemeType>
 
 export default function AppTheme({ children }: { children: ReactNode }) {
 
@@ -47,6 +47,6 @@ export default function AppTheme({ children }: { children: ReactNode }) {
     )
 }
 
-export function useAppTheme() {
+export function useAppTheme(): IThemeType {
     return useContext(AppThemeContext);
 }

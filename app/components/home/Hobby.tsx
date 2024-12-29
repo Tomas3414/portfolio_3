@@ -1,5 +1,5 @@
 import { monsterRat, poppins, ubuntu } from "@/app/utils/Fonts";
-import { photographyModel } from "@/app/utils/models";
+import { IPhotography } from "@/interface";
 import { Variants, motion } from "framer-motion";
 import Image from "next/legacy/image";
 import Link from "next/link";
@@ -26,7 +26,7 @@ const Heading = {
     open: { opacity: 1, transition: { delay: 0.2, } }
 }
 
-export default function Hobby({ data, themeColor }: { data: photographyModel[], themeColor: string }) {
+export default function Hobby({ data, themeColor }: { data: IPhotography[], themeColor: string }) {
 
     return (
         <>

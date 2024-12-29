@@ -1,11 +1,11 @@
 import DevFlag from "@/app/components/others/DevFlag";
-import { photographyModel } from "@/app/utils/models";
+import { IPhotography } from "@/interface";
 import { Metadata } from "next";
 import { ServerData } from "../utils/ServerData";
 import Bg from "./components/Bg";
 import Details from "./components/Details";
 
-function shuffle(array: photographyModel[]) {
+function shuffle(array: IPhotography[]) {
     let currentIndex = array.length;
   
     while (currentIndex != 0) {

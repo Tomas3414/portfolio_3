@@ -14,6 +14,7 @@ export default async function contactAction(formData: FormData) {
         withImg: true,
     }
 
+
     try {
         await fetch(db ? `${server}/sendMail?testDb=${db}` : `${server}/sendMail`,
             {

@@ -1,10 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import AnimatedHeading from '@/app/components/others/AnimatedHeading'
+import AnimatedHeading from '@/app/components/others/AnimatedHeading';
 import FlutterCard from '@/app/components/others/FlutterCard';
-import { flutterProjectModel } from '@/app/utils/models';
 import { ubuntu } from '@/app/utils/Fonts';
+import { IFlutterProject } from '@/interface';
+import { motion } from 'framer-motion';
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.5, delayChildren: 0.3 }},
@@ -15,7 +15,7 @@ const Heading = {
     open: { opacity: 1, transition: {delay: 0.5} }
 }
 
-const Flutter = ({flutter}: {flutter: flutterProjectModel[]}) => {
+const Flutter = ({flutter}: {flutter: IFlutterProject[]}) => {
 
     return (
         <div id="FlutterProjects" className='relative overflow-hidden myContainer py-[5rem]'>

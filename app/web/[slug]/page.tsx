@@ -1,7 +1,7 @@
 import AnimatedHeading from "@/app/components/others/AnimatedHeading";
 import DevFlag from "@/app/components/others/DevFlag";
 import { ServerData } from "@/app/utils/ServerData";
-import { webProjectModel } from "@/app/utils/models";
+import { IWebProject } from "@/interface";
 import { Metadata, ResolvingMetadata } from "next";
 import { Ubuntu } from "next/font/google";
 import Bg from "../components/Bg";
@@ -26,7 +26,7 @@ async function fetchDetails(slug: string) {
 
 export default async function Web({ params }: { params: { slug: string } }) {
 
-    const Data: webProjectModel = await fetchDetails(params.slug);
+    const Data: IWebProject = await fetchDetails(params.slug);
 
     return (
         <>
@@ -50,13 +50,12 @@ type metaDataProps = {
 }
 export async function generateMetadata({ params, searchParams }: metaDataProps, parent: ResolvingMetadata): Promise<Metadata> {
 
-    const Data: webProjectModel = await fetchDetails(params.slug);
+    const Data: IWebProject = await fetchDetails(params.slug);
 
     return {
         title: `Moinak Majumdar | Web ${Data.type} - ${Data.name}`,
         description: Data.intro,
         authors: [{ name: 'Moinak Majumdar', url: 'https://www.linkedin.com/in/moinak-majumdar' }],
-        keywords: Data.tools,
         creator: "Moinak Majumdar",
         publisher: "Vercel",
         metadataBase: new URL('https://moinak05.vercel.app/'),
