@@ -1,9 +1,9 @@
 'use client'
 
-import { useTheme } from "next-themes"
-import { MotionValue, motion } from "framer-motion"
 import stylesDark from '@/css/Hero.module.css'
-import stylesLight from '@/css/Hero.module.css'
+import stylesLight from '@/css/HeroLight.module.css'
+import { MotionValue, motion } from "framer-motion"
+import { useTheme } from "next-themes"
 
 export function HeroBg({y}: {y: MotionValue<string>}) {
     const { resolvedTheme } = useTheme()
