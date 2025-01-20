@@ -10,6 +10,8 @@ import Details from "../components/Details";
 const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 async function fetchDetails(slug: string) {
+    if (slug.includes('object') || slug.includes("Object")) return;
+
     const data = new ServerData({ path: 'getFlutter' });
 
     const res = await data.request({ body: { slug } });

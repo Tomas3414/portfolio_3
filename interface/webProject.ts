@@ -16,5 +16,6 @@ export default interface IWebProject {
     status: string,
     cover: string,
     createdAt: string | Date;
-    description: IDescription
+    description: IDescription;
+    updatedAt: string | Date;
 }
