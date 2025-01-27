@@ -1,14 +1,14 @@
 'use client'
 
 import AnimatedHeading from "@/app/components/others/AnimatedHeading";
-import { Background, BackgroundOption } from "@/app/components/others/Background";
+import { Background } from "@/app/components/others/Background";
 import Button from "@/app/components/others/Button";
 import DevFlag from "@/app/components/others/DevFlag";
 import Ring from "@/app/components/others/Ring";
 import { useAppTheme } from "@/app/components/theme/AppTheme";
 import { poppins, ubuntu } from "@/app/utils/Fonts";
+import { IconArrowBarRight } from "@/icons";
 import { useRouter } from "next/navigation";
-import { BsArrowBarRight } from "react-icons/bs";
 
 
 export default function Doc({ params }: { params: { slug: string } }) {
@@ -43,7 +43,7 @@ export default function Doc({ params }: { params: { slug: string } }) {
                         <Button className='mt-8 w-full md:w-3/4 mx-auto' onClick={() => router.push(`/Web/${params.slug}`)}>
                             <div className='flex w-full justify-center items-center'>
                                 <p className='mr-4 ' style={ubuntu.style}>Redirect Now</p>
-                                <BsArrowBarRight className='text-xl' />
+                                <IconArrowBarRight className='text-xl' />
                             </div>
                         </Button>
                     </div>
@@ -51,7 +51,7 @@ export default function Doc({ params }: { params: { slug: string } }) {
                 <Ring />
                 <div className="fixed w-full  h-full top-0 left-0 -z-40">
                     <div className='absolute w-full h-full inset-0 bg-gradient-to-l z-10  dark:from-[#000011] from-[#ffffff]'></div>
-                    <Background option={BackgroundOption.pattern} className="opacity-70 dark:opacity-100" />
+                    <Background option='pattern' className="opacity-70 dark:opacity-100" />
                     <div className='absolute w-full h-full inset-0 bg-gradient-to-t z-10  dark:from-[#000011] from-[#ffffff]'></div>
                 </div>
             </main>

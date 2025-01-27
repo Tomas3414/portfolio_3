@@ -1,12 +1,12 @@
 
+import { IconGithub, IconLinkedIn } from '@/icons';
 import { motion } from 'framer-motion';
 import Link from "next/link";
-import { FaLinkedinIn } from "react-icons/fa6";
-import { LuGithub } from "react-icons/lu";
+
 
 const links = [
-  { url: 'https://github.com/Moinak-Majumdar', toolTip: 'GitHub', color: '#181717', icon: <LuGithub /> },
-  { url: 'https://www.linkedin.com/in/moinak-majumdar', toolTip: 'Linkedin', color: '#0A66C2', icon: <FaLinkedinIn /> },
+  { url: 'https://github.com/Moinak-Majumdar', toolTip: 'GitHub', color: '#181717', icon: <IconGithub/> },
+  { url: 'https://www.linkedin.com/in/moinak-majumdar', toolTip: 'Linkedin', color: '#0A66C2', icon: <IconLinkedIn /> },
 ]
 
 

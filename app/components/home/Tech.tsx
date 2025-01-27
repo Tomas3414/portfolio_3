@@ -1,12 +1,10 @@
 import { monsterRat, poppins, ubuntu } from '@/app/utils/Fonts'
+import { IconApi, IconDatabase, IconDesktop, IconMobile, IconPackage, IconSettings } from '@/icons'
 import techLottie from '@/public/assets/lottie/tech2.json'
 import { Variants, motion } from 'framer-motion'
 import Lottie from 'lottie-react'
-import { AiFillApi, AiFillSetting, AiOutlineMobile } from 'react-icons/ai'
-import { FiPackage } from 'react-icons/fi'
-import { IoDesktopOutline, IoServerSharp } from 'react-icons/io5'
 import AnimatedHeading from '../others/AnimatedHeading'
-import { Background, BackgroundOption } from '../others/Background'
+import { Background } from '../others/Background'
 
 
 interface props {themeColor: string }
@@ -42,7 +40,7 @@ const Tech = ({themeColor }: props) => {
             </div>
             <div className="absolute w-full h-full top-0 right-0  -z-10">
                 <div className='absolute w-full h-full inset-0 bg-gradient-to-b z-10 dark:from-[#00001180] from-white to-transparent'></div>
-                <Background option={BackgroundOption.pattern} className='opacity-25 dark:opacity-70'/>
+                <Background option='pattern' className='opacity-25 dark:opacity-70'/>
             </div>
         </>
     )
@@ -78,10 +76,10 @@ const Left = {
 }
 
 const compo = [
-    { name: 'Frontend Development', tools: 'HTML, CSS, TypeScript, Tailwind Css, React.js, Next.js', logo: <IoDesktopOutline /> },
-    { name: 'Backend Development', tools: 'PHP, Node.js, Express.js, REST APIs', logo: <AiFillApi /> },
-    { name: 'Mobile App Development', tools: 'Dart/Flutter  ', logo: <AiOutlineMobile /> },
-    { name: 'Database', tools: 'Mongo Db, MySQL', logo: <IoServerSharp /> },
-    { name: 'Tech Stack', tools: 'MERN stack, JAM stack', logo: <FiPackage /> },
-    { name: 'Others', tools: 'Firebase, Vercel, Netlify, Heroku, Git, GitHub, Figma, Canva', logo: <AiFillSetting /> }
+    { name: 'Frontend Development', tools: 'HTML, CSS, TypeScript, Tailwind Css, React.js, Next.js', logo: <IconDesktop /> },
+    { name: 'Backend Development', tools: 'PHP, Node.js, Express.js, REST APIs', logo: <IconApi /> },
+    { name: 'Mobile App Development', tools: 'Dart/Flutter  ', logo: <IconMobile /> },
+    { name: 'Database', tools: 'Mongo Db, MySQL', logo: <IconDatabase /> },
+    { name: 'Tech Stack', tools: 'MERN stack, JAM stack', logo: <IconPackage /> },
+    { name: 'Others', tools: 'Firebase, Vercel, Netlify, Heroku, Git, GitHub, Figma, Canva', logo: <IconSettings /> }
 ]

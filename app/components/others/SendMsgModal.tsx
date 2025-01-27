@@ -1,11 +1,10 @@
-import { poppins, ubuntu } from "@/app/utils/Fonts"
+import contactAction from "@/app/actions/contact";
+import { poppins, ubuntu } from "@/app/utils/Fonts";
+import { IconReload, IconSend } from "@/icons";
+import { RefObject, useRef } from "react";
 import { useFormStatus } from "react-dom";
-import { RefObject, useRef } from "react"
-import { LuSend } from "react-icons/lu";
-import { IoReload } from "react-icons/io5";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import contactAction from "@/app/actions/contact";
 
 interface props { modalRef: RefObject<HTMLDialogElement> }
 
@@ -71,7 +70,7 @@ function ContactForm() {
                 <textarea id="visitor-message" aria-label="visitor-message" name="message" required className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-sm outline-none text-gray-700 p-2 resize-none leading-6 transition-colors duration-200 ease-in-out dark:bg-gray-800 dark:border-gray-700 dark:focus:ring-indigo-900 dark:text-gray-100 disabled:cursor-none" placeholder="Let me know how can I help you ..." disabled={pending}></textarea>
             </div>
             <button type="submit" style={ubuntu.style} className="text-white bg-indigo-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-500 rounded-lg text-lg flex items-center w-fit ml-auto gap-2 disabled:cursor-none" disabled={pending}>
-                {pending ? <IoReload className="text-xl animate-spin" /> : <LuSend className="text-xl" />}
+                {pending ? <IconReload className="text-xl animate-spin" /> : <IconSend className="text-xl" />}
                 {pending ? 'Sending ...' : 'Send'}
             </button>
         </>

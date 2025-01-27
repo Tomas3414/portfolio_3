@@ -19,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const origin = `${protocol}://${host}`;
 
     const res = await getData()
+    const resData = res['sitemap']
 
     const baseData: MetadataRoute.Sitemap = [
         {
@@ -40,27 +41,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             url: `${origin}/flutter`, lastModified: '2024-12-29', changeFrequency: 'yearly', priority: 0.8,
         },
     ]
+   
 
-
-    const resData = res['sitemap']
-    const dynamicData: MetadataRoute.Sitemap = [];
-
-    if (!!resData) {
-        resData.forEach((s: any) => {
-            dynamicData.push({
+    return [
+        ...baseData,
+        ...resData && resData.map((s: any) => {
+            return {
                 url: `${origin}${s?.slug}`,
                 lastModified: s.lastModified,
                 changeFrequency: s.changeFrequency,
                 priority: s.priority,
                 // images: [String(s.images[0])]
-            })
-        });
-    }
-
-    console.log(dynamicData)
-
-    return [
-        ...baseData,
-        ...dynamicData,
+            }
+        })
     ]
 }

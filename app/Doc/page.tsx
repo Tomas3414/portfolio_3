@@ -1,7 +1,7 @@
 'use client'
 
 import AnimatedHeading from "@/app/components/others/AnimatedHeading";
-import { Background, BackgroundOption } from "@/app/components/others/Background";
+import { Background } from "@/app/components/others/Background";
 import DevFlag from "@/app/components/others/DevFlag";
 import Ring from "@/app/components/others/Ring";
 import { useAppTheme } from "@/app/components/theme/AppTheme";
@@ -42,7 +42,7 @@ export default function Doc() {
                 <Ring />
                 <div className="fixed w-full  h-full top-0 left-0 -z-40">
                     <div className='absolute w-full h-full inset-0 bg-gradient-to-l z-10  dark:from-[#000011] from-[#ffffff]'></div>
-                    <Background option={BackgroundOption.pattern} className="opacity-70 dark:opacity-100" />
+                    <Background option='pattern' className="opacity-70 dark:opacity-100" />
                     <div className='absolute w-full h-full inset-0 bg-gradient-to-t z-10  dark:from-[#000011] from-[#ffffff]'></div>
                 </div>
             </main>

@@ -1,7 +1,7 @@
 'use client'
 
 import AnimatedHeading from '@/app/components/others/AnimatedHeading'
-import { Background, BackgroundOption } from '@/app/components/others/Background'
+import { Background } from '@/app/components/others/Background'
 import { comicNeue, poppins } from "@/app/utils/Fonts"
 import loadingLottie from '@/public/assets/lottie/loading.json'
 import Lottie from 'lottie-react'
@@ -29,7 +29,7 @@ export default function Loading() {
             </section>
             <div className="fixed w-full  h-full bottom-0 left-0 -z-40">
                 {/* <div className='absolute w-full h-full inset-0 bg-gradient-to-r z-10 dark:from-[#000011] from-[#ffffff]'></div> */}
-                <Background option={BackgroundOption.pattern} className='dark:opacity-100 opacity-60' />
+                <Background option='pattern' className='dark:opacity-100 opacity-60' />
                 <div className='absolute w-full h-full inset-0 bg-gradient-to-b z-10  dark:from-[#000011] from-[#ffffff]'></div>
             </div>
         </main>

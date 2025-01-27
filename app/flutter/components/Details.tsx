@@ -1,18 +1,16 @@
 'use client'
 
-import { Variants, motion } from 'framer-motion'
-import Image from 'next/image';
-import { useAppTheme } from '@/app/components/theme/AppTheme';
-import { FaGithub, FaRegImages } from 'react-icons/fa';
-import ImgSlider2 from "@/app/components/others/ImgSlider2";
-import { BsAndroid2 } from 'react-icons/bs';
-import { AiOutlineRollback } from 'react-icons/ai';
 import Button from '@/app/components/others/Button';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import ImgSlider2 from "@/app/components/others/ImgSlider2";
+import { useAppTheme } from '@/app/components/theme/AppTheme';
 import { poppins, ubuntu } from '@/app/utils/Fonts';
-import IFlutterProject from '@/interface/flutterProject';
 import localTimeStamp from '@/app/utils/localTimeStamp';
+import { IconAndroid, IconGithub, IconImage, IconRollback } from '@/icons';
+import IFlutterProject from '@/interface/flutterProject';
+import { Variants, motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 
 const outerVariants = { open: { transition: { staggerChildren: 0.2, delayChildren: 0.5 } }, closed: { transition: { staggerChildren: 0.7, staggerDirection: -1 } } };
@@ -26,7 +24,7 @@ const Bottom = { open: { opacity: 1 }, closed: { opacity: 0 } }
 const Details = ({ Data }: { Data: IFlutterProject }) => {
 
     const { themeColor } = useAppTheme();
-    const links = [{ url: Data.release, icon: <BsAndroid2 />, text: 'Release' }, { url: Data.gitRepo, icon: <FaGithub />, text: 'Git Repositories' }];
+    const links = [{ url: Data.release, icon: <IconAndroid />, text: 'Release' }, { url: Data.gitRepo, icon: <IconGithub />, text: 'Git Repositories' }];
     const router = useRouter();
 
     return (
@@ -60,7 +58,7 @@ const Details = ({ Data }: { Data: IFlutterProject }) => {
                 </div>
                 <motion.div variants={Bottom} className="mx-auto flex flex-col mt-20 w-full">
                     <div className="mx-auto mb-6 flex items-center text-2xl md:text-3xl">
-                        <FaRegImages className="text-4xl" style={{ color: themeColor }} />
+                        <IconImage className="text-4xl" style={{ color: themeColor }} />
                         <h1 className='ml-2' style={ubuntu.style}>Some
                             <span className="ml-2 font-bold">Screenshots</span>
                         </h1>
@@ -79,7 +77,7 @@ const Details = ({ Data }: { Data: IFlutterProject }) => {
                     <div className=' mx-auto'>
                         <Button onClick={() => router.back()}>
                             <div className='text-2xl flex items-center gap-4'>
-                                <AiOutlineRollback />
+                                <IconRollback />
                                 <span style={poppins.style} className='font-bold'>Back</span>
                             </div>
                         </Button>

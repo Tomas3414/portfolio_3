@@ -1,12 +1,11 @@
 import { monsterRat, poppins, ubuntu } from "@/app/utils/Fonts";
+import { IconFlower, IconMobileApt } from "@/icons";
 import { IPhotography } from "@/interface";
 import { Variants, motion } from "framer-motion";
 import Image from "next/legacy/image";
 import Link from "next/link";
-import { FaMobileAlt } from "react-icons/fa";
-import { IoFlowerSharp } from "react-icons/io5";
 import AnimatedHeading from "../others/AnimatedHeading";
-import { Background, BackgroundOption } from "../others/Background";
+import { Background } from "../others/Background";
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } },
@@ -43,7 +42,7 @@ export default function Hobby({ data, themeColor }: { data: IPhotography[], them
                         <div className="flex flex-col justify-center gap-4 mt-2">
                             <Link className='font-semibold flex gap-2 items-center' href='https://www.motorola.in/smartphones-motorola-one-macro/p' target='_blank'>
                                 <span style={ubuntu.style}>My device</span>
-                                <FaMobileAlt />
+                                <IconMobileApt />
                                 <span>-</span>
                                 <span className="font-bold">Motorola One Macro</span>
                             </Link>
@@ -60,7 +59,7 @@ export default function Hobby({ data, themeColor }: { data: IPhotography[], them
                     </div>}
                     <motion.div variants={innerVariants2} className="mt-6 mx-auto w-fit">
                         <Link href='/blossoms' className='text-lg font-semibold cursor-pointer px-4 py-2 bg-slate-600/10 dark:bg-white/20 rounded-md flex justify-center w-fit items-center gap-2 ' style={monsterRat.style}  scroll={false}>
-                            <IoFlowerSharp style={{ color: themeColor }} />
+                            <IconFlower style={{ color: themeColor }} />
                             <span>Show More</span>
                         </Link>
                     </motion.div>
@@ -69,7 +68,7 @@ export default function Hobby({ data, themeColor }: { data: IPhotography[], them
             {/* background */}
             <div className="absolute w-full h-full md:w-1/3 lg:w-1/2 top-0 right-0 -z-10">
                 <div className='absolute w-full h-full inset-0 bg-gradient-to-r z-10 dark:from-[#000011] from-[#ffffff]'></div>
-                <Background option={BackgroundOption.body} />
+                <Background option='body' />
                 <div className='absolute w-full h-full inset-0 bg-gradient-to-t z-10 dark:from-[#000011] from-[#ffffff]'></div>
             </div>
         </>

@@ -1,15 +1,15 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import Link from 'next/link';
-import Image from 'next/legacy/image';
-import { IoNewspaperOutline } from "react-icons/io5";
-import SocialMedia from '../others/SocialMedia';
-import AnimatedHeading from '../others/AnimatedHeading'
-import { useAppTheme } from '../theme/AppTheme';
-import { useTheme } from 'next-themes';
 import { comicNeue, poppins, ubuntu } from '@/app/utils/Fonts';
+import { IconNewspaper } from '@/icons';
+import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
+import Image from 'next/legacy/image';
+import Link from 'next/link';
+import AnimatedHeading from '../others/AnimatedHeading';
 import SendMsgBtn from '../others/SendMsgBtn';
+import SocialMedia from '../others/SocialMedia';
+import { useAppTheme } from '../theme/AppTheme';
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.5, delayChildren: 0.3 } },
@@ -55,7 +55,7 @@ const HireMe = () => {
                             <Link href="/assets/doc/Moinak-Majumdar_Resume.pdf" scroll={false} target='_blank' >
                                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }} transition={{ type: "spring", stiffness: 400, damping: 17 }} className='rounded-full w-full flex overflow-hidden p-1 animate-shift mt-8 xl:mt-0' style={{ background: 'linear-gradient(45deg, #f06, #f79, #06f, #79f, #0ff, #9f7)', backgroundSize: '300%, 300%' }}>
                                     <div className='px-10 py-2 rounded-full bg-gray-200 dark:bg-slate-800 flex items-center gap-2'>
-                                        <IoNewspaperOutline className='text-2xl' />
+                                        <IconNewspaper className='text-2xl' />
                                         <span style={poppins.style} className='font-semibold text-slate-700 dark:text-slate-300'>Download Resume</span>
                                     </div>
                                 </motion.div>

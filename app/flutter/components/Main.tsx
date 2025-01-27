@@ -1,6 +1,6 @@
 'use client'
 
-import FlutterProjects from '@/app/components/home//FlutterProjects'
+import FlutterProjects from '@/app/components/home/FlutterProjects'
 import { IFlutterProject } from '@/interface'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'

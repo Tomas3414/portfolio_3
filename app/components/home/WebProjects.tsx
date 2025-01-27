@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion'
-import AnimatedHeading from '../others/AnimatedHeading'
-import WebProjectCard from '../others/WebProjectCard';
 import { ubuntu } from '@/app/utils/Fonts';
 import IWebProject from '@/interface/webProject';
+import { motion } from 'framer-motion';
+import AnimatedHeading from '../others/AnimatedHeading';
+import WebProjectCard from '../others/WebProjectCard';
 
 
 const outerVariants = {

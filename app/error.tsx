@@ -1,13 +1,12 @@
 "use client"
 
+import { IconClose, IconTerminal, IconWarning } from "@/icons"
 import { Variants, motion } from "framer-motion"
-import { MdOutlineHighlightOff, MdOutlineWarning } from "react-icons/md"
-import SocialMedia from "./components/others/SocialMedia"
-import { Background, BackgroundOption } from "./components/others/Background"
-import { FaTerminal } from "react-icons/fa";
+import { Background } from "./components/others/Background"
 import Ring from "./components/others/Ring"
-import { ubuntu, poppins,  } from "./utils/Fonts"
 import SendMsgBtn from "./components/others/SendMsgBtn"
+import SocialMedia from "./components/others/SocialMedia"
+import { poppins, ubuntu, } from "./utils/Fonts"
 
 const outerVariants: Variants = {
     closed: { transition: { staggerChildren: 0.3, staggerDirection: -1 } },
@@ -31,11 +30,11 @@ export default function ErrorBoundary({ error, reset }: props) {
                 <motion.div initial='closed' animate='open' variants={inner1} className='relative p-8 rounded-3xl w-fit sm:w-35r flex flex-col overflow-hidden bg-transparent backdrop-blur-sm shadow-2xl bg-slate-200 dark:bg-slate-800 dark:shadow-slate-900 shadow-slate-300'>
                     <motion.div variants={outerVariants} initial='closed' animate='open'>
                         <motion.div variants={innerVariants} className='w-full'>
-                            <MdOutlineWarning className='text-4xl md:text-6xl mx-auto text-red-500' />
+                            <IconWarning className='text-4xl md:text-6xl mx-auto text-red-500' />
                         </motion.div>
                         <motion.div variants={innerVariants} className="mt-8 bg-slate-200 dark:bg-slate-900 rounded-md overflow-hidden" style={ubuntu.style}>
                             <div className="w-full px-2 py-1 bg-slate-700/20 flex items-center gap-2">
-                                <FaTerminal className="text-red-200" />
+                                <IconTerminal className="text-red-200" />
                                 <span className="text-red-500">ERROR</span>
                             </div>
                             <div className="p-2 text-sm flex flex-col">
@@ -52,17 +51,19 @@ export default function ErrorBoundary({ error, reset }: props) {
 
                         </motion.p>
                         <motion.div variants={innerVariants}>
-                            <SendMsgBtn className="my-4"/>
+                            <SendMsgBtn className="my-4" />
                             <SocialMedia classList='flex justify-center gap-4 text-white' />
                         </motion.div>
                     </motion.div>
-                    <MdOutlineHighlightOff className='absolute top-2 right-2 cursor-pointer text-4xl' onClick={reset} />
+                    <button className="w-fit h-fit" onClick={reset}>
+                        <IconClose className='absolute top-2 right-2 cursor-pointer text-4xl' />
+                    </button>
                 </motion.div>
             </div>
             <Ring />
             <div className="fixed w-full  h-full bottom-0 left-0 -z-40">
                 <div className='absolute w-full h-full inset-0 bg-gradient-to-r z-10 dark:from-[#000011] from-[#ffffff]'></div>
-                <Background option={BackgroundOption.body} />
+                <Background option='body' />
                 <div className='absolute w-full h-full inset-0 bg-gradient-to-b z-10  dark:from-[#000011] from-[#ffffff]'></div>
             </div>
         </main>

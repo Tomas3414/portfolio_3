@@ -1,9 +1,9 @@
 'use client'
 
 import { poppins } from '@/app/utils/Fonts'
-import  { useRef } from 'react'
-import { LuSend } from 'react-icons/lu'
+import { useRef } from 'react'
 import SendMsgModal from './SendMsgModal'
+import { IconSend } from '@/icons'
 
 interface props {className?: string}
 
@@ -21,7 +21,7 @@ const SendMsgBtn = (props: props) => {
                 <span className="absolute bottom-0 right-0 w-4 h-full bg-gradient-to-l from-black dark:from-white to-transparent opacity-5"></span>
                 <span className="absolute inset-0 w-full h-full border border-black dark:border-white rounded-md opacity-10"></span>
                 <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-black dark:bg-white rounded-full group-hover:w-56 group-hover:h-56 opacity-5"></span>
-                <LuSend className='relative mr-2 text-slate-700 dark:text-slate-300 group-hover:text-white text-lg' />
+                <IconSend className='relative mr-2 text-slate-700 dark:text-slate-300 group-hover:text-white text-lg' />
                 <span className="relative text-slate-700 dark:text-slate-300 group-hover:text-white font-semibold text-sm" style={poppins.style}>Send Message</span>
             </button>
             <SendMsgModal modalRef={modalRef} />

@@ -5,13 +5,12 @@ import ImgSlider2 from "@/app/components/others/ImgSlider2";
 import { useAppTheme } from "@/app/components/theme/AppTheme";
 import { poppins, ubuntu } from "@/app/utils/Fonts";
 import localTimeStamp from "@/app/utils/localTimeStamp";
+import { IconGithub, IconImage, IconLink, IconRollback } from "@/icons";
 import { IWebProject } from "@/interface";
 import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { AiOutlineRollback } from "react-icons/ai";
-import { FaGithub, FaLink, FaRegImages } from "react-icons/fa";
 
 const outerVariants = { open: { transition: { staggerChildren: 0.2, delayChildren: 0.5 } }, closed: { transition: { staggerChildren: 0.7, staggerDirection: -1 } } };
 const textVariants = { open: { opacity: 1, transition: { delay: .5 } }, closed: { opacity: 0 } }
@@ -24,7 +23,7 @@ const Details = ({ Data }: { Data: IWebProject }) => {
 
     const { themeColor } = useAppTheme();
     const router = useRouter();
-    const links = [{ url: Data.liveUrl, icon: <FaLink />, text: 'Live Url' }, { url: Data.gitRepo, icon: <FaGithub />, text: 'Git Repositories' }]
+    const links = [{ url: Data.liveUrl, icon: <IconLink />, text: 'Live Url' }, { url: Data.gitRepo, icon: <IconGithub />, text: 'Git Repositories' }]
 
 
     return (
@@ -60,7 +59,7 @@ const Details = ({ Data }: { Data: IWebProject }) => {
                 </div>
                 <motion.div variants={Bottom} className="mx-auto flex flex-col mt-20 w-full">
                     <div className="mx-auto mb-6 flex items-center text-2xl md:text-3xl">
-                        <FaRegImages className="text-4xl" style={{ color: themeColor }} />
+                        <IconImage className="text-4xl" style={{ color: themeColor }} />
                         <h4 className='ml-2' style={ubuntu.style}>Some
                             <span className="ml-2 font-bold">Screenshots</span>
                         </h4>
@@ -73,7 +72,7 @@ const Details = ({ Data }: { Data: IWebProject }) => {
                     <div className='mx-auto'>
                         <Button onClick={() => router.back()}>
                             <div className='text-2xl flex items-center gap-4'>
-                                <AiOutlineRollback />
+                                <IconRollback />
                                 <span style={poppins.style} className='font-bold'>Back</span>
                             </div>
                         </Button>

@@ -1,18 +1,14 @@
 'use client'
 
+import { poppins, ubuntu } from '@/app/utils/Fonts'
+import { IconCamera, IconCode, IconFileSignature, IconFlutter, IconHome, IconLeft, IconMenu, IconMessage, IconPeace, IconProject, IconSettings } from '@/icons'
 import { motion } from 'framer-motion'
-import { usePathname } from 'next/navigation'
-import { FaRegHandPeace, FaFileSignature, FaHome, FaAngleDoubleLeft, FaUserCheck } from 'react-icons/fa'
-import { BsGearFill, BsCameraFill, BsCodeSlash } from 'react-icons/bs'
-import { SiFlutter } from 'react-icons/si'
-import { useState, useEffect, ReactNode } from 'react'
-import { CgMenuRight } from 'react-icons/cg'
-import { BiMessageDetail } from 'react-icons/bi'
-import { useAppTheme } from '../theme/AppTheme'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { ReactNode, useEffect, useState } from 'react'
+import { useAppTheme } from '../theme/AppTheme'
 import { ModeSwitch2 } from './ModeSwitch'
-import { poppins, ubuntu } from '@/app/utils/Fonts'
 
 interface I_links { name: string, link: string, icon: ReactNode }
 
@@ -43,7 +39,7 @@ export default function HamBurger() {
         return (
             <>
                 <button onClick={() => setIsOpen(!isOpen)} className="fixed top-0 right-4 w-fit mt-2 z-50 rounded-full cursor-pointer text-2xl p-[9px] dark:bg-blue-300 bg-slate-300" area-label='sideNavBar' title='sideNavbar'>
-                    <CgMenuRight className="dark:text-black text-slate-800" />
+                    <IconMenu className="dark:text-black text-slate-800" />
                 </button>
                 {/* hl3 side navbar */}
                 <motion.div
@@ -75,7 +71,11 @@ export default function HamBurger() {
                                             <Link href={curr.link} onClick={() => setActiveLink(curr.name)} className={`flex items-center ${resolvedTheme === 'dark' ? 'text-gray-300' : 'text-gray-800'}`}>
                                                 {curr.icon}
                                                 <span className='ml-3 text-xl'>{curr.name}</span>
-                                                <FaAngleDoubleLeft className={activeLink === curr.name ? 'ml-4 text-2xl' : 'hidden'} style={{ color: themeColor }} />
+                                                {activeLink === curr.name &&
+                                                    <span className='ml-4 text-2xl' style={{ color: themeColor }}>
+                                                        <IconLeft  />
+                                                    </span>
+                                                }
                                             </Link>
                                         </motion.div>
                                     )
@@ -91,7 +91,7 @@ export default function HamBurger() {
         );
     } else {
         return <button className="fixed top-0 right-4 w-fit mt-2 z-50 rounded-full cursor-pointer text-2xl p-[9px] dark:bg-blue-300 bg-slate-300" area-label='sideNavBar' title='sideNavbar'>
-            <CgMenuRight className="dark:text-black text-slate-800" />
+            <IconMenu className="dark:text-black text-slate-800" />
         </button>
     }
 
@@ -111,27 +111,27 @@ const liVariants = {
 };
 
 const navLinkHome: I_links[] = [
-    { name: 'Intro', link: '#Intro', icon: <FaRegHandPeace /> },
-    { name: 'About Me', link: '#AboutMe', icon: <BiMessageDetail /> },
-    { name: 'Tools & Tech', link: '#Tech', icon: <BsGearFill /> },
-    { name: 'Web Projects', link: '#WebProjects', icon: <BsCodeSlash /> },
-    { name: 'Flutter Projects', link: '#FlutterProjects', icon: <SiFlutter /> },
-    { name: 'My Hobby', link: '#MyHobby', icon: <BsCameraFill /> },
-    { name: 'Hire Me', link: '#HireMe', icon: <FaFileSignature /> },
+    { name: 'Intro', link: '#Intro', icon: <IconPeace /> },
+    { name: 'About Me', link: '#AboutMe', icon: <IconMessage /> },
+    { name: 'Tools & Tech', link: '#Tech', icon: <IconSettings /> },
+    { name: 'Web Projects', link: '#WebProjects', icon: <IconCode /> },
+    { name: 'Flutter Projects', link: '#FlutterProjects', icon: <IconFlutter /> },
+    { name: 'My Hobby', link: '#MyHobby', icon: <IconCamera /> },
+    { name: 'Hire Me', link: '#HireMe', icon: <IconFileSignature /> },
 ]
 const navLinkProjects: I_links[] = [
-    { name: 'Home', link: '/', icon: <FaHome /> },
-    { name: 'Web Projects', link: '#WebProjects', icon: <BsCodeSlash /> },
-    { name: 'Flutter Projects', link: '#FlutterProjects', icon: <SiFlutter /> },
-    { name: 'My Hobby', link: '/blossoms', icon: <BsCameraFill /> },
+    { name: 'Home', link: '/', icon: <IconHome /> },
+    { name: 'Web Projects', link: '#WebProjects', icon: <IconCode /> },
+    { name: 'Flutter Projects', link: '#FlutterProjects', icon: <IconFlutter /> },
+    { name: 'My Hobby', link: '/blossoms', icon: <IconCamera /> },
 ]
 const navLinkBlossoms: I_links[] = [
-    { name: 'Home', link: '/', icon: <FaHome /> },
-    { name: 'Projects', link: '/projects', icon: <FaUserCheck /> },
+    { name: 'Home', link: '/', icon: <IconHome /> },
+    { name: 'Projects', link: '/projects', icon: <IconProject /> },
 ]
 const navLinkOthers: I_links[] = [
-    { name: 'Home', link: '/', icon: <FaHome /> },
-    { name: 'Projects', link: '/projects', icon: <FaUserCheck /> },
-    { name: 'Blossoms', link: '/blossoms', icon: <BsCameraFill /> },
+    { name: 'Home', link: '/', icon: <IconHome /> },
+    { name: 'Projects', link: '/projects', icon: <IconProject /> },
+    { name: 'Blossoms', link: '/blossoms', icon: <IconCamera /> },
 ]
 

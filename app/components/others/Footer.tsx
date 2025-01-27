@@ -1,14 +1,13 @@
 'use client'
 
-import { Variants, motion } from 'framer-motion'
-import Link from "next/link";
-import { AiFillLinkedin, AiFillGithub, } from "react-icons/ai";
-
-import FooterStyle from '@/css/Footer.module.css'
-import { useAppTheme } from '../theme/AppTheme';
-import { useTheme } from 'next-themes';
 import { comicNeue, poppins, ubuntu } from '@/app/utils/Fonts';
+import FooterStyle from '@/css/Footer.module.css';
+import { Variants, motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
+import Link from "next/link";
 import { useRef } from 'react';
+import { IconGithub, IconLinkedIn } from '../../../icons';
+import { useAppTheme } from '../theme/AppTheme';
 import SendMsgModal from './SendMsgModal';
 
 
@@ -95,8 +94,8 @@ const smooth2: Variants = {
     open: { opacity: 1, y: 0, transition: { delay: .5, type: 'spring', stiffness: 300 } }
 }
 const socialLinks = [
-    { name: "Linkedin", url: "https://www.linkedin.com/in/moinak-majumdar", icon: <AiFillLinkedin />, },
-    { name: "Github", url: "https://github.com/Moinak-Majumdar", icon: <AiFillGithub /> },
+    { name: "Linkedin", url: "https://www.linkedin.com/in/moinak-majumdar", icon: <IconLinkedIn size={20} />, },
+    { name: "Github", url: "https://github.com/Moinak-Majumdar", icon: <IconGithub /> },
 ];
 
 

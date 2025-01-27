@@ -1,12 +1,12 @@
 'use client'
 
 import { useRouter } from "next/navigation";
+import { Background } from "./components/others/Background";
 import Ring from "./components/others/Ring";
-import SocialMedia from "./components/others/SocialMedia";
-import { Background, BackgroundOption } from "./components/others/Background";
-import { poppins, ubuntu } from "./utils/Fonts";
-import { useAppTheme } from "./components/theme/AppTheme";
 import SendMsgBtn from "./components/others/SendMsgBtn";
+import SocialMedia from "./components/others/SocialMedia";
+import { useAppTheme } from "./components/theme/AppTheme";
+import { poppins, ubuntu } from "./utils/Fonts";
 
 
 
@@ -34,7 +34,7 @@ export default function Custom404() {
             <Ring />
             <div className="fixed w-full h-full top-0 right-0 -z-40">
                 <div className='absolute w-full h-full inset-0 bg-gradient-to-br z-10 dark:from-[#141e30] from-[#ffffff]'></div>
-                <Background option={BackgroundOption.pattern} className="opacity-50 dark:opacity-50" />
+                <Background option='pattern' className="opacity-50 dark:opacity-50" />
             </div>
         </main>
     )

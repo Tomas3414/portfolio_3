@@ -9,10 +9,8 @@ import Image from 'next/legacy/image'
 import { useEffect, useState } from 'react'
 
 
-enum BackgroundOption { body = "body", pattern = 'pattern' }
-
 interface props {
-    option: BackgroundOption, className?: string, w?: number, h?: number, layout?: any, position?: string, objFit?: any
+    option: "body" | 'pattern', className?: string, w?: number, h?: number, layout?: any, position?: string, objFit?: any
 }
 
 function Background({ option, className = "", w, h, layout, position, objFit }: props) {
@@ -27,9 +25,9 @@ function Background({ option, className = "", w, h, layout, position, objFit }: 
 
     useEffect(() => {
         if (resolvedTheme === 'dark') {
-            option === BackgroundOption.body ? setSource(bodyDark) : setSource(patternDark);
+            option === 'body' ? setSource(bodyDark) : setSource(patternDark);
         } else {
-            option === BackgroundOption.body ? setSource(bodyLight) : setSource(patternLight);
+            option === 'body' ? setSource(bodyLight) : setSource(patternLight);
         }
     }, [resolvedTheme, option])
 
@@ -59,4 +57,5 @@ function Background({ option, className = "", w, h, layout, position, objFit }: 
 
 }
 
-export { Background, BackgroundOption }
+export { Background }
+
