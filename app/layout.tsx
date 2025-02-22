@@ -1,10 +1,11 @@
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { Analytics } from '@vercel/analytics/react'
 import '../css/globals.css'
-import AppTheme from './components/theme/AppTheme'
-import Navbar from './components/others/Navbar'
 import Footer from './components/others/Footer'
+import Navbar from './components/others/Navbar'
+import AppTheme from './components/theme/AppTheme'
 
 
 export const metadata: Metadata = {
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: props) {
           <Footer />
         </AppTheme>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
