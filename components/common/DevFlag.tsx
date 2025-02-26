@@ -3,7 +3,7 @@ import DevFlagModal from './DevFlagModal';
 
 async function getStatus() {
     try {
-        const data = new ServerData({ path: '/getStatus', revalidate: 0 })
+        const data = new ServerData({ path: 'getStatus', revalidate: 0 })
         const res = await data.request();
         return await res.json()
     } catch (error) {
@@ -13,6 +13,7 @@ async function getStatus() {
 
 const DevFlag = async () => {
     const status = await getStatus()
+
     if (status.devFlag) {
         return (
             <DevFlagModal  description={status.description}/>

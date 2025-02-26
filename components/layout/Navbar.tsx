@@ -5,10 +5,11 @@ import { Fleur_De_Leah } from 'next/font/google';
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { useRef } from "react";
-import AnimatedHeading from "./AnimatedHeading";
+import SendMsgModal from "../common/SendMsgModal";
+import AnimatedHeading from "../ui/AnimatedHeading";
 import HamBurger from "./Hamburger";
 import { ModeSwitch1 } from "./ModeSwitch";
-import SendMsgModal from "./SendMsgModal";
+import Sidebar from "./Sidebar";
 
 const fleurDeLeah = Fleur_De_Leah({ display: "swap", weight: ['400'], subsets: ['latin'] })
 
@@ -44,7 +45,8 @@ export default function Navbar() {
         </nav>
       </header>
       <ModeSwitch1 />
-      <HamBurger />
+      {/* <HamBurger /> */}
+      <Sidebar />
       <SendMsgModal modalRef={modalRef} />
     </>
   )

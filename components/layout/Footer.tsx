@@ -6,9 +6,9 @@ import { Variants, motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import Link from "next/link";
 import { useRef } from 'react';
-import { IconGithub, IconLinkedIn } from '../../../icons';
+import { IconGithub, IconLinkedIn } from '@/icons';
+import SendMsgModal from '../common/SendMsgModal';
 import { useAppTheme } from '../theme/AppTheme';
-import SendMsgModal from './SendMsgModal';
 
 
 function Footer() {

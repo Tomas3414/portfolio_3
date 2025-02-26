@@ -1,15 +1,15 @@
 'use client'
 
+import { comicNeue, poppins, ubuntu } from "@/app/utils/Fonts";
 import cardStyle from '@/css/WebCard2.module.css';
-import { poppins, comicNeue, ubuntu } from "@/app/utils/Fonts";
+import IWebProject from '@/interface/webProject';
 import { Variants, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from 'next/legacy/image';
 import Link from "next/link";
 import { CSSProperties, useEffect, useState } from "react";
 import { useAppTheme } from "../theme/AppTheme";
-import AnimatedHeading from "./AnimatedHeading";
-import IWebProject from '@/interface/webProject';
+import AnimatedHeading from "../ui/AnimatedHeading";
 
 const outerVariants: Variants = {
     open: { transition: { staggerChildren: 0.1, delayChildren: 0.2, delay: .4 } },

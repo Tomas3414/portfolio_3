@@ -1,7 +1,7 @@
 'use client'
 
-import AnimatedHeading from '@/app/components/others/AnimatedHeading';
-import WebProjectCard from '@/app/components/others/WebProjectCard';
+import WebProjectCard from '@/components/others/WebProjectCard';
+import AnimatedHeading from '@/components/ui/AnimatedHeading';
 import { ubuntu } from '@/app/utils/Fonts';
 import { IWebProject } from '@/interface';
 import { motion } from 'framer-motion';

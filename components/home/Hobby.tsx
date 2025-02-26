@@ -4,8 +4,8 @@ import { IPhotography } from "@/interface";
 import { Variants, motion } from "framer-motion";
 import Image from "next/legacy/image";
 import Link from "next/link";
-import AnimatedHeading from "../others/AnimatedHeading";
-import { Background } from "../others/Background";
+import { Background } from "../ui/Background";
+import AnimatedHeading from "../ui/AnimatedHeading";
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } },

@@ -3,9 +3,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import '../css/globals.css'
-import Footer from './components/others/Footer'
-import Navbar from './components/others/Navbar'
-import AppTheme from './components/theme/AppTheme'
+import Footer from '@/components/layout/Footer'
+import Navbar from '@/components/layout/Navbar'
+import AppTheme from '@/components/theme/AppTheme'
 
 
 export const metadata: Metadata = {

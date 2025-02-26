@@ -3,8 +3,8 @@ import { IconApi, IconDatabase, IconDesktop, IconMobile, IconPackage, IconSettin
 import techLottie from '@/public/assets/lottie/tech2.json'
 import { Variants, motion } from 'framer-motion'
 import Lottie from 'lottie-react'
-import AnimatedHeading from '../others/AnimatedHeading'
-import { Background } from '../others/Background'
+import { Background } from '../ui/Background'
+import AnimatedHeading from '../ui/AnimatedHeading'
 
 
 interface props {themeColor: string }

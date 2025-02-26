@@ -1,7 +1,7 @@
 import { comicNeue, monsterRat, poppins, ubuntu } from '@/app/utils/Fonts';
 import { motion } from 'framer-motion';
-import AnimatedHeading from '../others/AnimatedHeading';
-import { Background } from '../others/Background';
+import { Background } from '../ui/Background';
+import AnimatedHeading from '../ui/AnimatedHeading';
 
 interface props { themeColor: string }
 const AboutMe = ({ themeColor }: props) => {

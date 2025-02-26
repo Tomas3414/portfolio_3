@@ -1,8 +1,8 @@
 'use client'
 
-import AnimatedHeading from "@/app/components/others/AnimatedHeading";
-import { useAppTheme } from "@/app/components/theme/AppTheme";
 import { poppins, ubuntu } from "@/app/utils/Fonts";
+import { useAppTheme } from "@/components/theme/AppTheme";
+import AnimatedHeading from "@/components/ui/AnimatedHeading";
 import { IPhotography } from "@/interface";
 import { motion } from "framer-motion";
 import Image from "next/image";

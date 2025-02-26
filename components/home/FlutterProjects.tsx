@@ -1,8 +1,8 @@
 import { ubuntu } from "@/app/utils/Fonts";
 import { IFlutterProject } from "@/interface";
 import { Variants, motion } from "framer-motion";
-import AnimatedHeading from "../others/AnimatedHeading";
 import FlutterCard from "../others/FlutterCard";
+import AnimatedHeading from "../ui/AnimatedHeading";
 
 
 const outerVariants = {

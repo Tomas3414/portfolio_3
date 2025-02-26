@@ -1,4 +1,4 @@
-import DevFlag from "@/app/components/others/DevFlag";
+import DevFlag from "@/components/common/DevFlag";
 import { IPhotography } from "@/interface";
 import { Metadata } from "next";
 import { ServerData } from "../utils/ServerData";

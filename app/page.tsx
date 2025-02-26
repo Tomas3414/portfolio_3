@@ -1,7 +1,7 @@
 
 import IPhotography from '@/interface/photography';
-import HomePage from './components/home/HomePage';
-import DevFlag from './components/others/DevFlag';
+import DevFlag from '@/components/common/DevFlag';
+import HomePage from '@/components/home/HomePage';
 import { ServerData } from './utils/ServerData';
 
 async function pageData() {

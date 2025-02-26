@@ -1,6 +1,6 @@
-import AnimatedHeading from "@/app/components/others/AnimatedHeading";
-import DevFlag from "@/app/components/others/DevFlag";
 import { ServerData } from "@/app/utils/ServerData";
+import DevFlag from "@/components/common/DevFlag";
+import AnimatedHeading from "@/components/ui/AnimatedHeading";
 import IFlutterProject from "@/interface/flutterProject";
 import { Metadata, ResolvingMetadata } from "next";
 import { Ubuntu } from "next/font/google";
@@ -10,7 +10,7 @@ import Details from "../components/Details";
 const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 async function fetchDetails(slug: string) {
-    if (slug.includes('object') || slug.includes("Object")) return;
+    if (slug.toLowerCase().includes('object')) return;
 
     const data = new ServerData({ path: 'getFlutter' });
 

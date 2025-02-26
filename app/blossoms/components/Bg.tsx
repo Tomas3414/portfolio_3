@@ -1,6 +1,6 @@
 'use client'
 
-import { Background } from "@/app/components/others/Background"
+import { Background } from "@/components/ui/Background"
 
 const Bg = () => {
     return (

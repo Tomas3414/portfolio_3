@@ -14,8 +14,7 @@ export default function Hero() {
     const { themeColor } = useAppTheme();
     const mainRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ target: mainRef, offset: ["start start", "end start"] });
-    const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '-0%']);
-    const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+    const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '80%']);
 
     return (
         <section id='Intro' ref={mainRef} className='relative min-h-screen overflow-hidden'>
@@ -31,7 +30,7 @@ export default function Hero() {
                                 typingDelay={100}
                                 eraseDelay={1800}
                                 cursorClassName="text-xl md:text-2xl ml-1 dark:text-gray-200 text-gray-900"
-                                displayTextRenderer={(text: string, i: number) => {
+                                displayTextRenderer={(text: string) => {
                                     return (
                                         <h2>
                                             {text.split('').map((curr, i) => {
@@ -56,7 +55,7 @@ export default function Hero() {
                     </motion.div>
                     <motion.article variants={Bottom} className="mt-4 text-base lg:text-lg dark:text-gray-400 text-slate-700">
                         <p>
-                            <span className={`mr-1 px-1.5 py-0.5 rounded text-slate-200  ${poppins.className}`} style={{backgroundColor: themeColor}}>Welcome to my portfolio!</span>
+                            <span className={`mr-1 px-1.5 py-0.5 rounded text-slate-200  ${poppins.className}`} style={{ backgroundColor: themeColor }}>Welcome to my portfolio!</span>
                             <span style={monsterRat.style} className=''>
                                 I am a digital crafter of exceptional experience. From responsive websites to seamless mobile apps, I transform ideas into polished, user-friendly solutions. Take a look at my work and let&apos;s build something amazing together.
                             </span>
@@ -65,12 +64,12 @@ export default function Hero() {
                 </div>
                 <div className="absolute min-w-full flex justify-center items-center bottom-14 lg:bottom-10 dark:text-gray-500 text-gray-600">
                     <motion.div className='flex' initial={{ y: 5 }} animate={{ y: -5 }} transition={{ duration: 1, repeat: Infinity, repeatType: 'reverse' }}>
-                        <IconArrowUpDown className='text-xl lg:text-2xl' style={{ color: themeColor }}/>
+                        <IconArrowUpDown className='text-xl lg:text-2xl' style={{ color: themeColor }} />
                     </motion.div>
                     <span className='ml-1 lg:text-lg text-xs' style={poppins.style}>Keep Scrolling</span>
                 </div>
             </motion.div>
-            <HeroBg y={backgroundY} />
+            <HeroBg />
         </section>
 
     )
@@ -78,7 +77,7 @@ export default function Hero() {
 
 const viewport = {
     once: false,
-    amount: typeof window !== 'undefined' ? (window.innerWidth > 450 ? 0.8 : 0.5) : 0.8
+    amount: typeof window !== 'undefined' ? (window.innerWidth > 450 ? 0.6 : 0.5) : 0.6
 }
 
 const transition = {
@@ -88,10 +87,10 @@ const transition = {
 
 const Top: Variants = {
     closed: { x: -50, y: -50, opacity: 0, scale: 0.8 },
-    open: { x: 0, y: 0, opacity: 1, scale: 1, transition: { duration: 0.8, delay: 0.2, } }
+    open: { x: 0, y: 0, opacity: 1, scale: 1, transition: { duration: 0.8 } }
 }
 
 const Bottom: Variants = {
     closed: { x: 50, y: 50, opacity: 0, },
-    open: { x: 0, y: 0, opacity: 1, transition: { duration: 0.5, delay: 0.2 } }
+    open: { x: 0, y: 0, opacity: 1, transition: { duration: 0.5 } }
 }

@@ -1,8 +1,9 @@
 'use client'
 
-import AnimatedHeading from '@/app/components/others/AnimatedHeading'
-import { Background } from '@/app/components/others/Background'
+
 import { comicNeue, poppins } from "@/app/utils/Fonts"
+import AnimatedHeading from "@/components/ui/AnimatedHeading"
+import { Background } from "@/components/ui/Background"
 import loadingLottie from '@/public/assets/lottie/loading.json'
 import Lottie from 'lottie-react'
 import { useEffect } from 'react'

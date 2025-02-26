@@ -1,5 +1,5 @@
-import AnimatedHeading from "@/app/components/others/AnimatedHeading";
-import DevFlag from "@/app/components/others/DevFlag";
+import DevFlag from "@/components/common/DevFlag";
+import AnimatedHeading from "@/components/ui/AnimatedHeading";
 import { ServerData } from "@/app/utils/ServerData";
 import { IWebProject } from "@/interface";
 import { Metadata, ResolvingMetadata } from "next";
@@ -11,7 +11,7 @@ const ubuntu = Ubuntu({ display: 'swap', weight: ['400', '700'], subsets: ['lati
 
 async function fetchDetails(slug: string) {
 
-    if (slug.includes('object') || slug.includes("Object")) return;
+    if (slug.toLowerCase().includes('object')) return;
 
     const data = new ServerData({ path: 'getWeb' });
 
@@ -33,7 +33,7 @@ export default async function Web({ params }: { params: { slug: string } }) {
             <DevFlag />
             <main className='relative min-h-screen'>
                 <section className='myContainer pt-[4rem] pb-[2rem] dark:text-gray-300 text-gray-800'>
-                    <AnimatedHeading classList="mt-8 uppercase" title={`web ${Data.type}`} />
+                    {Data?.type && <AnimatedHeading classList="mt-8 uppercase" title={`web ${Data.type}`} />}
                     <h1 style={ubuntu.style} className="font-bold lg:text-5xl text-4xl capitalize">{Data.name}</h1>
                     <Details Data={Data} />
                 </section>
@@ -53,7 +53,7 @@ export async function generateMetadata({ params, searchParams }: metaDataProps, 
     const Data: IWebProject = await fetchDetails(params.slug);
 
     return {
-        title: `Moinak Majumdar | Web ${Data.type} - ${Data.name}`,
+        title: `Moinak Majumdar | Web ${Data?.type ?? ''} - ${Data.name}`,
         description: Data.intro,
         authors: [{ name: 'Moinak Majumdar', url: 'https://www.linkedin.com/in/moinak-majumdar' }],
         creator: "Moinak Majumdar",

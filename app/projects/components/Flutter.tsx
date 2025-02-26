@@ -1,7 +1,7 @@
 'use client'
 
-import AnimatedHeading from '@/app/components/others/AnimatedHeading';
-import FlutterCard from '@/app/components/others/FlutterCard';
+import FlutterCard from '@/components/others/FlutterCard';
+import AnimatedHeading from '@/components/ui/AnimatedHeading';
 import { ubuntu } from '@/app/utils/Fonts';
 import { IFlutterProject } from '@/interface';
 import { motion } from 'framer-motion';

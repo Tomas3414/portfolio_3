@@ -1,8 +1,8 @@
 'use client'
 
-import Button from '@/app/components/others/Button';
-import ImgSlider2 from "@/app/components/others/ImgSlider2";
-import { useAppTheme } from '@/app/components/theme/AppTheme';
+import Button from '@/components/ui/Button';
+import { useAppTheme } from '@/components/theme/AppTheme';
+import ImgSlider2 from "@/components/ui/ImgSlider2";
 import { poppins, ubuntu } from '@/app/utils/Fonts';
 import localTimeStamp from '@/app/utils/localTimeStamp';
 import { IconAndroid, IconGithub, IconImage, IconRollback } from '@/icons';

@@ -1,11 +1,11 @@
 "use client"
 
+import SocialMedia from "@/components/common/SocialMedia"
+import { Background } from "@/components/ui/Background"
+import Ring from "@/components/ui/Ring"
+import SendMsgBtn from "@/components/ui/SendMsgBtn"
 import { IconClose, IconTerminal, IconWarning } from "@/icons"
 import { Variants, motion } from "framer-motion"
-import { Background } from "./components/others/Background"
-import Ring from "./components/others/Ring"
-import SendMsgBtn from "./components/others/SendMsgBtn"
-import SocialMedia from "./components/others/SocialMedia"
 import { poppins, ubuntu, } from "./utils/Fonts"
 
 const outerVariants: Variants = {

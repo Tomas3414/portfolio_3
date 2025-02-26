@@ -10,14 +10,14 @@ import { ReactNode, useEffect, useState } from 'react'
 import { useAppTheme } from '../theme/AppTheme'
 import { ModeSwitch2 } from './ModeSwitch'
 
-interface I_links { name: string, link: string, icon: ReactNode }
+interface ILinks { name: string, link: string, icon: ReactNode }
 
 
 export default function HamBurger() {
     const pathName = usePathname()
     const [isOpen, setIsOpen] = useState(false)
     const [activeLink, setActiveLink] = useState<string>()
-    const [navLink, setNavLink] = useState<I_links[]>()
+    const [navLink, setNavLink] = useState<ILinks[]>()
 
     const { themeColor, isClient } = useAppTheme();
     const { resolvedTheme } = useTheme();
@@ -110,7 +110,7 @@ const liVariants = {
     closed: { y: -40, opacity: 0 }
 };
 
-const navLinkHome: I_links[] = [
+const navLinkHome: ILinks[] = [
     { name: 'Intro', link: '#Intro', icon: <IconPeace /> },
     { name: 'About Me', link: '#AboutMe', icon: <IconMessage /> },
     { name: 'Tools & Tech', link: '#Tech', icon: <IconSettings /> },
@@ -119,17 +119,17 @@ const navLinkHome: I_links[] = [
     { name: 'My Hobby', link: '#MyHobby', icon: <IconCamera /> },
     { name: 'Hire Me', link: '#HireMe', icon: <IconFileSignature /> },
 ]
-const navLinkProjects: I_links[] = [
+const navLinkProjects: ILinks[] = [
     { name: 'Home', link: '/', icon: <IconHome /> },
     { name: 'Web Projects', link: '#WebProjects', icon: <IconCode /> },
     { name: 'Flutter Projects', link: '#FlutterProjects', icon: <IconFlutter /> },
     { name: 'My Hobby', link: '/blossoms', icon: <IconCamera /> },
 ]
-const navLinkBlossoms: I_links[] = [
+const navLinkBlossoms: ILinks[] = [
     { name: 'Home', link: '/', icon: <IconHome /> },
     { name: 'Projects', link: '/projects', icon: <IconProject /> },
 ]
-const navLinkOthers: I_links[] = [
+const navLinkOthers: ILinks[] = [
     { name: 'Home', link: '/', icon: <IconHome /> },
     { name: 'Projects', link: '/projects', icon: <IconProject /> },
     { name: 'Blossoms', link: '/blossoms', icon: <IconCamera /> },

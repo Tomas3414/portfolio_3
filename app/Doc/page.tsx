@@ -1,10 +1,10 @@
 'use client'
 
-import AnimatedHeading from "@/app/components/others/AnimatedHeading";
-import { Background } from "@/app/components/others/Background";
-import DevFlag from "@/app/components/others/DevFlag";
-import Ring from "@/app/components/others/Ring";
-import { useAppTheme } from "@/app/components/theme/AppTheme";
+import DevFlag from "@/components/common/DevFlag";
+import { useAppTheme } from "@/components/theme/AppTheme";
+import AnimatedHeading from "@/components/ui/AnimatedHeading";
+import { Background } from "@/components/ui/Background";
+import Ring from "@/components/ui/Ring";
 import { poppins, ubuntu } from "../utils/Fonts";
 
 

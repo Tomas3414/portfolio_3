@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
-import AnimatedHeading from '../others/AnimatedHeading';
-import SendMsgBtn from '../others/SendMsgBtn';
-import SocialMedia from '../others/SocialMedia';
+import SocialMedia from '../common/SocialMedia';
 import { useAppTheme } from '../theme/AppTheme';
+import AnimatedHeading from '../ui/AnimatedHeading';
+import SendMsgBtn from '../ui/SendMsgBtn';
 
 const outerVariants = {
     open: { transition: { staggerChildren: 0.5, delayChildren: 0.3 } },

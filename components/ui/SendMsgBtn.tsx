@@ -1,9 +1,9 @@
 'use client'
 
 import { poppins } from '@/app/utils/Fonts'
-import { useRef } from 'react'
-import SendMsgModal from './SendMsgModal'
 import { IconSend } from '@/icons'
+import { useRef } from 'react'
+import SendMsgModal from '../common/SendMsgModal'
 
 interface props {className?: string}
 
