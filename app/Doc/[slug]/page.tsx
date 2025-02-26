@@ -1,12 +1,12 @@
 'use client'
 
-import Button from "@/app/components/others/Button";
-import Ring from "@/app/components/ui/Ring";
 import { poppins, ubuntu } from "@/app/utils/Fonts";
 import DevFlag from "@/components/common/DevFlag";
+import Button from "@/components/ui/Button";
 import { useAppTheme } from "@/components/theme/AppTheme";
 import AnimatedHeading from "@/components/ui/AnimatedHeading";
 import { Background } from "@/components/ui/Background";
+import Ring from "@/components/ui/Ring";
 import { IconArrowBarRight } from "@/icons";
 import { useRouter } from "next/navigation";
 

@@ -1,6 +1,6 @@
 'use client'
 
-import WebProjectCard from "@/app/components/others/WebProjectCard"
+import WebProjectCard from "@/components/others/WebProjectCard"
 import AnimatedHeading from "@/components/ui/AnimatedHeading"
 import { IWebProject } from "@/interface"
 import { motion } from "framer-motion"
